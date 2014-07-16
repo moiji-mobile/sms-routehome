@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"testEndPoint" ],
+	"name" : "HomeRoutingDialogueTest",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"hlr" ],
+	"name" : "HomeRoutingDialogue",
+	"pools" : [
+		 ],
+	"super" : "TCAPDialogue",
+	"type" : "normal" }

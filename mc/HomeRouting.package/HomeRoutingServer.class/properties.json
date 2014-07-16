@@ -1,0 +1,16 @@
+{
+	"category" : "HomeRouting-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"hlrNumber",
+		"subscriberMap",
+		"endPoint" ],
+	"name" : "HomeRoutingServer",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
