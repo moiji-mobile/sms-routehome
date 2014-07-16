@@ -1,5 +1,5 @@
 as yet unclassified
 newDialogue
 	^super newDialogue
-		hlr: hlr;
+		homeRoutingServer: homeRoutingServer;
 		yourself

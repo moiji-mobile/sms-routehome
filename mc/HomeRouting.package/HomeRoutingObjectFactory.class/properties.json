@@ -6,7 +6,7 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"hlr" ],
+		"homeRoutingServer" ],
 	"name" : "HomeRoutingObjectFactory",
 	"pools" : [
 		 ],
