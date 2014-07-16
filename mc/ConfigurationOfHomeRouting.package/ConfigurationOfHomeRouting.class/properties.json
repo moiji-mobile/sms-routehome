@@ -1,0 +1,14 @@
+{
+	"category" : "ConfigurationOfHomeRouting",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"LastVersionLoad" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"project" ],
+	"name" : "ConfigurationOfHomeRouting",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
