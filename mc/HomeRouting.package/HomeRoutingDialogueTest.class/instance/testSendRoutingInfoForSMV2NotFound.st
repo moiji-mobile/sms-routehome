@@ -24,5 +24,5 @@ testSendRoutingInfoForSMV2NotFound
 		applicationContextName: (self applicationContextFor: operationName).
 
 	"TODO.... check for unknownSubscriber... but so far we can only go for numbers"
-	self assert: lastError errorCode equals: 1
+	self assert: lastError name = 'unknownSubscriber'
 	
