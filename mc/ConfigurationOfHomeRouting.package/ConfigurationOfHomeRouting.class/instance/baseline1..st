@@ -30,6 +30,13 @@ baseline1: spec
 						versionString: #development;
 						file: 'ConfigurationOfASN1';
 						repository: 'http://smalltalkhub.com/mc/NorbertHartl/ASN1/main' ].
+			spec
+				project: 'Osmocom' with: [
+					spec
+						className: 'ConfigurationOfOsmocom';
+						versionString: #'bleedingEdge';
+						file: 'ConfigurationOfOsmocom';
+						repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main' ].
 
                 spec
 				package: 'SMPP-Codec' with: [ spec requires: #('Osmocom') ];
