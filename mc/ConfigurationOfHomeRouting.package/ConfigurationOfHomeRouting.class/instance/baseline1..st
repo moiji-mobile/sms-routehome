@@ -6,7 +6,7 @@ baseline1: spec
 		spec blessing: #baseline.
                 spec repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main'.    
                 spec 
-				package: 'HomeRouting' with: [ spec requires: #('TCAP' 'ASN1') ].
+				package: 'HomeRouting' with: [ spec requires: #('TCAP' 'ASN1' 'SMPP-Codec' 'SMPP-Connection') ].
 
 			spec
 				project: 'Phexample' with: [
@@ -30,6 +30,9 @@ baseline1: spec
 						versionString: #development;
 						file: 'ConfigurationOfASN1';
 						repository: 'http://smalltalkhub.com/mc/NorbertHartl/ASN1/main' ].
-									
+
+                spec
+				package: 'SMPP-Codec' with: [ spec requires: #('Osmocom') ];
+				package: 'SMPP-Connection' with: [ spec requires: #('SMPP-Codec') ].
                 spec
 				group: 'default' with: #('HomeRouting') ].
