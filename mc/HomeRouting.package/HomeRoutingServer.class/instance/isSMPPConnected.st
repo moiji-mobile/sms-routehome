@@ -1,0 +1,3 @@
+smpp
+isSMPPConnected
+	^smppConnection isConnected

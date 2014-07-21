@@ -1,17 +1,13 @@
 {
-	"category" : "HomeRouting-Core",
+	"category" : "HomeRouting-Tests",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"hlrNumber",
-		"subscriberMap",
-		"endPoint",
-		"mscNumber",
-		"smppConnection" ],
-	"name" : "HomeRoutingServer",
+		 ],
+	"name" : "SMPPMockConnection",
 	"pools" : [
 		 ],
 	"super" : "Object",

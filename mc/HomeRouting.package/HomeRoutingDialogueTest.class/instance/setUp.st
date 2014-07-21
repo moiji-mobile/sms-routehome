@@ -5,6 +5,7 @@ setUp
 			hlrNumber: '35412';
 			mscNumber: '35411';
 			subscriberMap: (Dictionary new at: '1234' put: '4321'; yourself);
+			smppConnection: SMPPMockConnection new;
 			yourself.
 
 	testEndPoint := TCAPTestServiceEndPoint new.
