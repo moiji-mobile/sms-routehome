@@ -6,4 +6,4 @@ moForwardSM: anInvocation
 	destinationAddress := anInvocation argument sm_RP_DA.
 	payload := anInvocation argument sm_RP_UI asByteArray.
 
-	homeRoutingServer forwardSM: self invocation: anInvocation origin: originatingAddress destination: destinationAddress payload: payload.
+	homeRoutingServer forwardSM: self invocation: anInvocation
