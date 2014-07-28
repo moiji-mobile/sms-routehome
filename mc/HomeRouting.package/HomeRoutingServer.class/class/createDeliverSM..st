@@ -11,7 +11,7 @@ createDeliverSM: anInvocation
 
 	deliverSM := SMPPDeliverSM new.
 	deliverSM
-		serviceType: 0;
+		serviceType: '';
 		sourceTypeOfNumber: sourceAddrs first;
 		sourceNumberingPlanIndicator: sourceAddrs second;
 		sourceAddress: sourceAddrs third;
