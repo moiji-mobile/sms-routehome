@@ -12,7 +12,7 @@ testSendRoutingInfoForSMV2NotFound
 	dialogue := testEndPoint createDialogue.
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
-				class: TCAPReportSuccessAndFailure  timeout: 500.
+				class: 1 timeout: 500.
 	invoke
 		onReturn: [self assert: false ];
 		onError: [:err | lastError := err];

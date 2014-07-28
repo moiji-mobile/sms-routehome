@@ -1,23 +1,21 @@
 as yet unclassified
-createDeliverSM: anInvocation
+createDeliverSM: anInvocation destinationNumber: destinationNumber
 
-	| deliverSM sourceAddrs destAddrs |
+	| deliverSM sourceAddrs |
 
 	sourceAddrs := self extractSourceAddress: anInvocation argument sm_RP_OA.
 	sourceAddrs ifNil: [^nil].
-	
-	destAddrs := self extractDestAddress: anInvocation argument sm_RP_DA.
-	destAddrs ifNil: [^nil].
+
 
 	deliverSM := SMPPDeliverSM new.
 	deliverSM
-		serviceType: 0;
+		serviceType: '';
 		sourceTypeOfNumber: sourceAddrs first;
 		sourceNumberingPlanIndicator: sourceAddrs second;
 		sourceAddress: sourceAddrs third;
-		destinationTypeOfNumber: destAddrs first;
-		destinationNumberingPlanIndicator: destAddrs second;
-		destinationAddress: destAddrs third;
+		destinationTypeOfNumber: 1;
+		destinationNumberingPlanIndicator: 1;
+		destinationAddress: destinationNumber;
 		esmClass: 0;
 		protocolId: 0;
 		priorityLevel: 0;

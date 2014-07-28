@@ -1,6 +1,6 @@
 as yet unclassified
 forwardSM: aDialogue invocation: anInvocation
-	| deliverSM  smppCommand imsi |
+	| deliverSM  smppCommand imsi destNumber |
 
 	self isSMPPConnected ifFalse: [
 		anInvocation returnError: 'sm-DeliveryFailure' with: nil.
@@ -16,13 +16,13 @@ forwardSM: aDialogue invocation: anInvocation
 	imsi := imsi fromTBCD.
 
 	"Reverse look-up, probably too slow in the long run!"
-	(subscriberMap includes: imsi) ifFalse: [
+	destNumber := subscriberMap keyAtValue: imsi ifAbsent: [
 		"Need to have a valid IMSI..."
 		anInvocation returnError: 'unexpectedDataValue' with: nil.
 		^aDialogue requestTcEnd: false.
 	].
 
-	deliverSM := self class createDeliverSM: anInvocation.
+	deliverSM := self class createDeliverSM: anInvocation destinationNumber: destNumber.
 	deliverSM ifNil: [
 		anInvocation returnError: 'sm-DeliveryFailure' with: nil.
 		^aDialogue requestTcEnd: false.
