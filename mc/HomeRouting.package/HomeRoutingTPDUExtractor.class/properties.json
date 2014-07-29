@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HolgerHansPeterFreyther 7/29/2014 17:33",
+	"instvars" : [
+		 ],
+	"name" : "HomeRoutingTPDUExtractor",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
