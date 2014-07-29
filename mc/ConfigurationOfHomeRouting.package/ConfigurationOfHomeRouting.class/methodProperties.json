@@ -23,7 +23,9 @@
 		"validate" : "NorbertHartl 7/16/2014 10:39" },
 	"instance" : {
 		"baseline1:" : "HolgerHansPeterFreyther 7/19/2014 19:42",
-		"development:" : "NorbertHartl 7/16/2014 10:41",
+		"baseline2:" : "HolgerHansPeterFreyther 7/29/2014 08:13",
+		"development:" : "HolgerHansPeterFreyther 7/29/2014 08:12",
 		"project" : "NorbertHartl 7/16/2014 10:38",
-		"stable:" : "NorbertHartl 7/16/2014 10:41",
-		"version1:" : "NorbertHartl 7/16/2014 10:59" } }
+		"stable:" : "HolgerHansPeterFreyther 7/29/2014 08:12",
+		"version1:" : "NorbertHartl 7/16/2014 10:59",
+		"version2:" : "HolgerHansPeterFreyther 7/29/2014 08:14" } }
