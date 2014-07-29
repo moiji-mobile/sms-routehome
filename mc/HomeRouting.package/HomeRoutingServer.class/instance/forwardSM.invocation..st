@@ -23,7 +23,7 @@ forwardSM: aDialogue invocation: anInvocation
 		^aDialogue requestTcEnd: false.
 	].
 
-	deliverSM := self class createDeliverSM: anInvocation destinationNumber: destNumber.
+	deliverSM := self createDeliverSM: anInvocation destinationNumber: destNumber.
 	deliverSM ifNil: [
 		anInvocation returnError: 'sm-DeliveryFailure' with: nil.
 		^aDialogue requestTcEnd: false.
