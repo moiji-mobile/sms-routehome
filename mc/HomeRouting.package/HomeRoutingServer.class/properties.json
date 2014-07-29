@@ -10,7 +10,8 @@
 		"subscriberMap",
 		"endPoint",
 		"mscNumber",
-		"smppConnection" ],
+		"smppConnection",
+		"smppConnectionManager" ],
 	"name" : "HomeRoutingServer",
 	"pools" : [
 		 ],

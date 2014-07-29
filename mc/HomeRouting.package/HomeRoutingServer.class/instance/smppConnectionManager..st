@@ -1,0 +1,3 @@
+smpp
+smppConnectionManager: aConnectionManager
+	smppConnectionManager := aConnectionManager

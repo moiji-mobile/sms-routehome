@@ -1,8 +1,9 @@
 as yet unclassified
 forwardSM: aDialogue invocation: anInvocation
-	| deliverSM  smppCommand imsi destNumber |
+	| deliverSM  smppCommand imsi destNumber selectedSMPPConnection |
 
-	self isSMPPConnected ifFalse: [
+	selectedSMPPConnection := self selectSMPPConnection.
+	selectedSMPPConnection ifNil: [
 		anInvocation returnError: 'sm-DeliveryFailure' with: nil.
 		^aDialogue requestTcEnd: false.
 	].
@@ -33,4 +34,4 @@ forwardSM: aDialogue invocation: anInvocation
 		onResult: [:res | self smppResult: aDialogue invocation: anInvocation];
 		onError: [:err | self smppError: aDialogue invocation: anInvocation];
 		yourself.
-	smppConnection scheduleCommand: smppCommand.
+	selectedSMPPConnection scheduleCommand: smppCommand.

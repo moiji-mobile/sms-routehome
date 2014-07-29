@@ -1,4 +1,4 @@
-as yet unclassified
+smpp
 smppConnection: aConnection
 
 	smppConnection := aConnection

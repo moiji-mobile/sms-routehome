@@ -1,3 +1,0 @@
-smpp
-isSMPPConnected
-	^smppConnection isConnected
