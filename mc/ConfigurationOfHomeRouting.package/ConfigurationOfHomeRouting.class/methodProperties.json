@@ -24,8 +24,10 @@
 	"instance" : {
 		"baseline1:" : "HolgerHansPeterFreyther 7/19/2014 19:42",
 		"baseline2:" : "HolgerHansPeterFreyther 7/29/2014 08:13",
-		"development:" : "HolgerHansPeterFreyther 7/29/2014 08:12",
+		"baseline3:" : "HolgerHansPeterFreyther 7/29/2014 12:38",
+		"development:" : "HolgerHansPeterFreyther 7/29/2014 12:38",
 		"project" : "NorbertHartl 7/16/2014 10:38",
-		"stable:" : "HolgerHansPeterFreyther 7/29/2014 08:12",
+		"stable:" : "HolgerHansPeterFreyther 7/29/2014 12:38",
 		"version1:" : "NorbertHartl 7/16/2014 10:59",
-		"version2:" : "HolgerHansPeterFreyther 7/29/2014 08:14" } }
+		"version2:" : "HolgerHansPeterFreyther 7/29/2014 08:14",
+		"version3:" : "HolgerHansPeterFreyther 7/29/2014 12:38" } }
