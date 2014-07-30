@@ -32,9 +32,7 @@ extract: aByteArray
 	res at: 'TP-SCTS' put: data.
 	
 	len := stream next.
-	data := stream next: len.
-	(data size = len)
-		ifFalse: [^self error: 'Short Read on Pharo'].
+	res at: 'TP-UD-Len' put: len.
+	data := stream upToEnd.
 	res at: 'TP-UD' put: data.
-	res at: 'rest' put: stream atEnd.
 	^res

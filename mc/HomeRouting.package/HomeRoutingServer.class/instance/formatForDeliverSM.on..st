@@ -16,10 +16,14 @@ formatForDeliverSM: tpdu on: deliverSM
 	"Look at the DCS of the message"
 	(tpdu at: 'TP-DCS') = 0 ifTrue: [
 		| bytes |
+		"The last 7bit of the TP-UD might be empty and this is why there is
+		a TP-UD-Len so one can know if the last '0' belongs to the SMS or not.
+		We need to truncate the byearray here and abuse a feature of Squeak
+		at this point. To use >>#next:"
 		bytes := GSMDecoding expand: (tpdu at: 'TP-UD').
 		^deliverSM
 			dataCoding: 0;
-			shortMessage: bytes;
+			shortMessage: (bytes readStream next: (tpdu at: 'TP-UD-Len'));
 			yourself
 	].
 	
