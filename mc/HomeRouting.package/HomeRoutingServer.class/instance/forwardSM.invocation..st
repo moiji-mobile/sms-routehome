@@ -2,7 +2,8 @@ as yet unclassified
 forwardSM: aDialogue invocation: anInvocation
 	| deliverSM  smppCommand imsi destNumber selectedSMPPConnection |
 	
-	self logDebug: 'Requested to forward SMS' area: #home.
+	self logDebug: ('ID(<1s>) Requested to forward SMS'
+						expandMacrosWith: aDialogue id) area: #home.
 
 	selectedSMPPConnection := self selectSMPPConnection.
 	selectedSMPPConnection ifNil: [
