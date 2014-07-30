@@ -3,7 +3,8 @@ applicationContextForOperationCode: aNumber
 	"Some SMSCs from Sweden make a TC-BEGIN without an Application Context.
 	Resolve the AC for them"
 
-	self logDebug: 'Unknown applicationContextForOperation invocationNumber: ', aNumber printString area: #home.
+	self
+		logDebug: ('ID(<1s>) Unknown applicationContextForOperation invoke(<2p>' expandMacrosWith: self id with:  aNumber) 		area: #home.
 	aNumber = 45
 		ifTrue: [^(self tcapModel bindingNamed: 'shortMsgGatewayContext-v2') value].
 	"Orange? likes to send forwardSM without ACN"

@@ -6,7 +6,8 @@ forwardSM: aDialogue invocation: anInvocation
 
 	selectedSMPPConnection := self selectSMPPConnection.
 	selectedSMPPConnection ifNil: [
-		self logError: 'No SMPPConnection. returning with sm-DeliveryFailure' area: #home.
+		self logError: ('ID(<1s>) No SMPPConnection. returning with sm-DeliveryFailure'
+						expandMacrosWith: aDialogue id) area: #home.
 		anInvocation returnError: 'sm-DeliveryFailure' with: nil.
 		^aDialogue requestTcEnd: false.
 	].
@@ -14,7 +15,8 @@ forwardSM: aDialogue invocation: anInvocation
 	"Check if the TO is a IMSI"
 	imsi := anInvocation argument sm_RP_DA at: 'imsi' ifAbsent: [
 		"Need to have an IMSI..."
-		self logError: 'No IMSI inside sm_RP_DA' area: #home.
+		self logError: ('ID(<1s>) No IMSI inside sm_RP_DA'
+						expandMacrosWith: aDialogue id) area: #home.
 		anInvocation returnError: 'unexpectedDataValue' with: nil.
 		^aDialogue requestTcEnd: false.
 	].
@@ -23,14 +25,16 @@ forwardSM: aDialogue invocation: anInvocation
 	"Reverse look-up, probably too slow in the long run!"
 	destNumber := subscriberMap keyAtValue: imsi ifAbsent: [
 		"Need to have a valid IMSI..."
-		self logError: ('IMSI(<1s>) was not found as value in map' expandMacrosWith: imsi) area: #home.
+		self logError: ('ID(<1s>) IMSI(<2s>) was not found as value in map'
+						expandMacrosWith: aDialogue id with: imsi) area: #home.
 		anInvocation returnError: 'unexpectedDataValue' with: nil.
 		^aDialogue requestTcEnd: false.
 	].
 
 	deliverSM := self createDeliverSM: anInvocation destinationNumber: destNumber.
 	deliverSM ifNil: [
-		self logError: ('IMSI(<1s>) failed to create deliverSM SMPP PDU' expandMacrosWith: imsi) area: #home.
+		self logError: ('ID(<1s>) IMSI(<2s>) failed to create deliverSM SMPP PDU'
+						expandMacrosWith: aDialogue id with: imsi) area: #home.
 		anInvocation returnError: 'sm-DeliveryFailure' with: nil.
 		^aDialogue requestTcEnd: false.
 	].
