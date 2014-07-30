@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "LogAreaHomeRouting",
+	"pools" : [
+		 ],
+	"super" : "LogArea",
+	"type" : "normal" }

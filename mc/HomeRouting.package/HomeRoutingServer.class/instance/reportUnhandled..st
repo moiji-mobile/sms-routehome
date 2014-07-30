@@ -1,7 +1,4 @@
 smpp
 reportUnhandled: tpdu
-	Transcript
-		nextPutAll: 'Can''t handle SMS like: ';
-		nextPutAll: tpdu printString;
-		cr
+	self logError: ('TPDU(<1p>) was not handled.' expandMacrosWith: tpdu) area: #home.
 		

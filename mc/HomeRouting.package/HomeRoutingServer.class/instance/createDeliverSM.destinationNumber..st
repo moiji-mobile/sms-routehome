@@ -12,6 +12,7 @@ createDeliverSM: anInvocation destinationNumber: destinationNumber
 			ifTrue: [string := '0', string].
 		tpdu := HomeRoutingTPDUExtractor extract: (ByteArray readHexFrom: string).
 	] on: Error do: [:err |
+		err logException: ('Dest(<1s>) couldn''t parse TPDU' expandMacrosWith: destinationNumber) area: #home.
 		^nil
 	].
 
