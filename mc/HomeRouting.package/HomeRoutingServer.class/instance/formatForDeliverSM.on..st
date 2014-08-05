@@ -6,8 +6,18 @@ formatForDeliverSM: tpdu on: deliverSM
 	"We would need to set esmClass and look at the TP-UD front."
 	(tpdu at: 'TP-RP')
 		ifTrue: [self reportUnhandled: tpdu. ^nil].
-	(tpdu at: 'TP-UDHI')
-		ifTrue: [self reportUnhandled: tpdu. ^nil].
+	(tpdu at: 'TP-UDHI') ifTrue: [
+		"Handle segmentation"
+		| udh  |
+		udh := tpdu at: 'TP-UDH'.
+		udh first = 0 ifFalse: [self reportUnhandled: tpdu. ^nil].
+		udh second = 3 ifFalse: [self reportUnhandled: tpdu. ^nil].
+		udh size = 5 ifFalse: [self reportUnhandled: tpdu. ^nil].
+		deliverSM
+			sarMessageReferenceNumber: (udh at: 3);
+			sarTotalSegments: (udh at: 4);
+			sarSegmentNumber: (udh at: 5).
+	].
 		
 	deliverSM
 		esmClass: 0;
