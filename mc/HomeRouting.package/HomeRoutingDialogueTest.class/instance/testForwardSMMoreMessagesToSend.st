@@ -1,6 +1,6 @@
 as yet unclassified
-testForwardSM
-	| operationName dialogue  invoke invokeResultMessage sriArg ended |
+testForwardSMMoreMessagesToSend
+	| operationName dialogue  invoke invokeResultMessage sriArg continued  |
 
 	sriArg := ASN1Dictionary new
 				at: 'sm-RP-DA' put: (ASN1Dictionary new
@@ -10,6 +10,7 @@ testForwardSM
 					at: 'serviceCentreAddressOA' put: '912343';
 					yourself);
 				at: 'sm-RP-UI' put: '040c9153345800485500004170716104000004d4f29c0e';
+				at: 'moreMessagesToSend' put: 1;
 				yourself.
 
 	operationName := 'forwardSM'.
@@ -17,8 +18,8 @@ testForwardSM
 	dialogue
 		onPAbort: [:msg | self assert: false];
 		onUAbort: [:msg | self assert: false];
-		onContinue: [self assert: false ];
-		onEnd: [ended := true].
+		onContinue: [continued := true];
+		onEnd: [self assert: false].
 
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
@@ -35,4 +36,4 @@ testForwardSM
 	
 
 	self assert: invokeResultMessage result isNil.
-	self assert: ended.
+	self assert: continued.

@@ -4,4 +4,4 @@ smppTimeout: aDialogue invocation: anInvocation
 	self logError: ('ID(<1s>) SMPP command timed-out'
 					expandMacrosWith: aDialogue id) area: #home.
 	anInvocation returnError: 'sm-DeliveryFailure' with: nil.
-	^aDialogue requestTcEnd: false.
+	^self continueOrEnd: aDialogue invocation: anInvocation.

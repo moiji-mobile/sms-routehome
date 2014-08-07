@@ -5,4 +5,4 @@ smppResult: aDialogue invocation: anInvocation
 	self logNotice: ('ID(<1s>) SMPP command succeeded'
 					expandMacrosWith: aDialogue id) area: #home.
 	anInvocation returnResultLast: nil.
-	aDialogue requestTcEnd: false.
+	self continueOrEnd: aDialogue invocation: anInvocation
