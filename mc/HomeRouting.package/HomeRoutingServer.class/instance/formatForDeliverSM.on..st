@@ -1,6 +1,6 @@
 smpp
 formatForDeliverSM: tpdu on: deliverSM
-	| data  |
+	| data |
 	"Depending on the TPDU we have to set the esmClass, dcs and either
 	the short message."
 
@@ -31,12 +31,31 @@ formatForDeliverSM: tpdu on: deliverSM
 		a TP-UD-Len so one can know if the last '0' belongs to the SMS or not.
 		We need to truncate the bytearray here and abuse a feature of Squeak
 		at this point. To use >>#next:"
-		bytes := GSMDecoding expand: (tpdu at: 'TP-UD').
-		data putByteArray: bytes.
-		data := data asByteArray readStream next: (tpdu at: 'TP-UD-Len').
+		bytes := #[] toMessage.
+		bytes
+			putByteArray: data;
+			putByteArray: (tpdu at: 'TP-UD').
+		bytes := GSMDecoding expand: bytes.
+		bytes := bytes readStream next: (tpdu at: 'TP-UD-Len').
+		
+		"With TP-UDHIand 7bit encoding there are some bytes we need to
+		skip and re-do now."
+		(tpdu at: 'TP-UDHI') ifTrue: [
+			| skip fillBits |
+			"Now we need to skip the n-octets of the header and maybe from
+			the fill bit as well and put back the original data again."
+			skip := (((data size)* 8) \\ 7) + 1.
+			fillBits := 6 - skip.
+			fillBits > 0
+				ifTrue: [skip := skip + 1].
+
+			data
+				putByteArray: (bytes allButFirst: skip).
+			bytes := data.
+		].
 		^deliverSM
 			dataCoding: 0;
-			shortMessage: data asByteArray;
+			shortMessage: bytes toByteArray;
 			yourself
 	].
 	
