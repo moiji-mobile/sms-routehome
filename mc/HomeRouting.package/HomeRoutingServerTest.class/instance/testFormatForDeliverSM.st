@@ -6,9 +6,13 @@ testFormatForDeliverSM
 	deliverSM := SMPPDeliverSM new.
 	res := server formatForDeliverSM: extracted on: deliverSM.
 	self deny: res isNil.
-	self assert: res sarMessageReferenceNumber equals: 217.
-	self assert: res sarTotalSegments equals: 2.
-	self assert: res sarSegmentNumber equals: 1.
+	self assert: res sarMessageReferenceNumber equals: nil.
+	self assert: res sarTotalSegments equals: nil.
+	self assert: res sarSegmentNumber equals: nil.
+
+	"We expect it to be inside user data."
+	self assert: deliverSM esmClass equals: 64.
+	self assert: deliverSM shortMessage size equals: 159.
 
 	"Encode just to see if there is an exception"
 	res toMessage asByteArray.
