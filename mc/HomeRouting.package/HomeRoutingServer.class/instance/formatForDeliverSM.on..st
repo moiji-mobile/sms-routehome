@@ -55,7 +55,7 @@ formatForDeliverSM: tpdu on: deliverSM
 		].
 		^deliverSM
 			dataCoding: 0;
-			shortMessage: bytes toByteArray;
+			shortMessage: bytes asByteArray;
 			yourself
 	].
 	
