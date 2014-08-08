@@ -7,7 +7,7 @@ dispatchInvocation: anInvocation
 	(self respondsTo: selector)
 		ifFalse: [
 			
-			self logError: ('ID(<1s) HomeRoutingDialogue not handler for: <2s>' expandMacrosWith: self id with:  selector) area: #home.
+			self logError: ('ID(<1p>) HomeRoutingDialogue not handler for: <2s>' expandMacrosWith: self id with:  selector) area: #home.
 			^self requestTcUAbort: TCAPDialogueUAbort serviceUser ].
 
 	self perform: anInvocation normalizedOperationName with: anInvocation.

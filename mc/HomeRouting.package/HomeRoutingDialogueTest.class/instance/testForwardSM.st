@@ -7,9 +7,9 @@ testForwardSM
 					at: 'imsi' put: '4321' toTBCD;
 					yourself);
 				at: 'sm-RP-OA' put: (ASN1Dictionary new
-					at: 'serviceCentreAddressOA' put: '912343';
+					at: 'serviceCentreAddressOA' put: (ByteArray readHexFrom: '912343');
 					yourself);
-				at: 'sm-RP-UI' put: '040c9153345800485500004170716104000004d4f29c0e';
+				at: 'sm-RP-UI' put: (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e');
 				yourself.
 
 	operationName := 'forwardSM'.
