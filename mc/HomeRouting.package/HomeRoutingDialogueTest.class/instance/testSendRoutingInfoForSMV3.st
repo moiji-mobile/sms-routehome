@@ -28,4 +28,4 @@ testSendRoutingInfoForSMV3
 		applicationContextName: (self applicationContextFor: operationName).
 	
 
-	self assert: invokeResultMessage result imsi = '4321' toTBCD asUppercase.
+	self assert: invokeResultMessage result imsi = '4321' toTBCD.

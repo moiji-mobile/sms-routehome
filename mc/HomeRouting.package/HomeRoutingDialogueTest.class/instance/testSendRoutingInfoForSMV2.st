@@ -12,7 +12,7 @@ testSendRoutingInfoForSMV2
 	dialogue := testEndPoint createDialogue.
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
-				class: 1 timeout: 500.
+				class: TCAPReportSuccessAndFailure  timeout: 500.
 	invoke
 		onReturn: [self assert: false ];
 		onError: [self assert: false];
@@ -24,4 +24,4 @@ testSendRoutingInfoForSMV2
 		applicationContextName: (self applicationContextFor: operationName).
 
 	"TODO.. make sure things return"
-	self assert: invokeResultMessage result imsi = '4321' toTBCD asUppercase.
+	self assert: invokeResultMessage result imsi = '4321' toTBCD.
