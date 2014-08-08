@@ -44,8 +44,8 @@ formatForDeliverSM: tpdu on: deliverSM
 			| skip fillBits |
 			"Now we need to skip the n-octets of the header and maybe from
 			the fill bit as well and put back the original data again."
-			skip := (((data size)* 8) \\ 7) + 1.
-			fillBits := 6 - skip.
+			skip := (((data size)* 8) \\ 7).
+			fillBits := 7 - skip.
 			fillBits > 0
 				ifTrue: [skip := skip + 1].
 
