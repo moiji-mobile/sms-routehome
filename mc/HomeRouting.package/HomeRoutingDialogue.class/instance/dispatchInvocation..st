@@ -11,3 +11,4 @@ dispatchInvocation: anInvocation
 			^self requestTcUAbort: TCAPDialogueUAbort serviceUser ].
 
 	self perform: anInvocation normalizedOperationName with: anInvocation.
+	sawInvocation := true.
