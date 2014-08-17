@@ -5,7 +5,7 @@
 		"applicationContextFor:" : "HolgerHansPeterFreyther 7/16/2014 08:38",
 		"hlrAddr" : "HolgerHansPeterFreyther 7/16/2014 08:37",
 		"localAddr" : "HolgerHansPeterFreyther 7/16/2014 08:37",
-		"setUp" : "HolgerHansPeterFreyther 7/21/2014 08:48",
+		"setUp" : "HolgerHansPeterFreyther 8/17/2014 13:14",
 		"testForwardSM" : "HolgerHansPeterFreyther 8/8/2014 18:00",
 		"testForwardSMMoreMessagesToSend" : "HolgerHansPeterFreyther 8/8/2014 18:04",
 		"testMOForwardSM" : "HolgerHansPeterFreyther 8/8/2014 18:04",
@@ -13,4 +13,6 @@
 		"testMTForwardSM" : "HolgerHansPeterFreyther 8/8/2014 18:05",
 		"testSendRoutingInfoForSMV2" : "NorbertHartl 8/8/2014 11:10",
 		"testSendRoutingInfoForSMV2NotFound" : "NorbertHartl 7/22/2014 14:28",
-		"testSendRoutingInfoForSMV3" : "NorbertHartl 8/8/2014 11:09" } }
+		"testSendRoutingInfoForSMV2Unrechable" : "HolgerHansPeterFreyther 8/17/2014 13:16",
+		"testSendRoutingInfoForSMV3" : "NorbertHartl 8/8/2014 11:09",
+		"testSendRoutingInfoForSMV3Unreachable" : "HolgerHansPeterFreyther 8/17/2014 13:18" } }

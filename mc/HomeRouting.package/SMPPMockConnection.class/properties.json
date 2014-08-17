@@ -6,7 +6,7 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"reachable" ],
 	"name" : "SMPPMockConnection",
 	"pools" : [
 		 ],

@@ -1,11 +1,12 @@
 as yet unclassified
 setUp
 	| testHomeRouting hlrEndPoint |
+	smppConnection := SMPPMockConnection new.
 	testHomeRouting := HomeRoutingServer new
 			hlrNumber: '35412';
 			mscNumber: '35411';
 			subscriberMap: (Dictionary new at: '1234' put: '4321'; yourself);
-			smppConnection: SMPPMockConnection new;
+			smppConnection: smppConnection;
 			yourself.
 
 	testEndPoint := TCAPTestServiceEndPoint new.

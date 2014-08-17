@@ -7,4 +7,8 @@ sendRoutingInfoForSMV2: anInvocation
 	msisdn := anInvocation argument msisdn fromE164.
 	smscAddr := anInvocation argument serviceCentreAddress fromE164.
 
-	self handleSRiForSM: msisdn smscAddr: smscAddr invocation: anInvocation
+	self handleSRiForSM: msisdn smscAddr: smscAddr invocation: anInvocation ifAbsent: [
+		anInvocation returnError: 'absentSubscriberV2' with: true.
+		self requestTcEnd: false.
+		^false
+	]
