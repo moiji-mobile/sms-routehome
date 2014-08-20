@@ -41,6 +41,7 @@ forwardSM: aDialogue invocation: anInvocation
 	].
 
 	smppCommand := (SMPPCommand initWith: deliverSM)
+		setTimeout: 80;
 		onTimeout: [self smppTimeout: aDialogue invocation: anInvocation];
 		onResult: [:res | self smppResult: aDialogue invocation: anInvocation];
 		onError: [:err | self smppError: aDialogue invocation: anInvocation];
