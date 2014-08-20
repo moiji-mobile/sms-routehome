@@ -15,6 +15,11 @@ handleSMDeliveryStatus: aMSISDN invocation: anInvocation operation: anOperationN
 	(anInvocation argument sm_DeliveryOutcome value = 'successfulTransfer') ifTrue: [
 		^self requestTcEnd: false].
 
+	self logNotice: ('ID(<1p>) HomeRoutingDialogue adding to buffer MSISDN(<2s>) with SMSC(<3s>)'
+						expandMacrosWith: self id with: aMSISDN with: anInvocation argument serviceCentreAddress fromE164)
+						area: #home.
+	homeRoutingServer registerSMSC: anInvocation argument serviceCentreAddress fromE164 for: anInvocation argument msisdn.
+
 	informServiceCentreArg := ASN1Dictionary new
 		at: 'storedMSISDN' put: aMSISDN toE164;
 		at: 'mw-Status' put: '010000';

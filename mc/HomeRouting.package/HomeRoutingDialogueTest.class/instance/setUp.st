@@ -1,6 +1,6 @@
 as yet unclassified
 setUp
-	| testHomeRouting hlrEndPoint |
+	| hlrEndPoint |
 	smppConnection := SMPPMockConnection new.
 	testHomeRouting := HomeRoutingServer new
 			hlrNumber: '35412';
