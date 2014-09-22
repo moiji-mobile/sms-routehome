@@ -1,7 +1,7 @@
 as yet unclassified
 handleSMDeliveryStatus: aMSISDN invocation: anInvocation operation: anOperationName
 	| aSubscriber |
-	aSubscriber := homeRoutingServer database findMSISDN: aMSISDN.
+	aSubscriber := hlr database findMSISDN: aMSISDN.
 	aSubscriber ifNil: [
 		self logError: ('ID(<1p>) HomeRoutingDialogue no subscriber MSISDN(<2s>) '
 						expandMacrosWith: self id with: aMSISDN) area: #home.

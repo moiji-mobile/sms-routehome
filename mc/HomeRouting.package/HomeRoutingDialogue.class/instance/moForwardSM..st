@@ -1,3 +1,3 @@
 shortMsgRelayPackage
 moForwardSM: anInvocation
-	homeRoutingServer forwardSM: self invocation: anInvocation
+	hlr forwardSM: self invocation: anInvocation

@@ -1,7 +1,7 @@
 sms
 handleSRiForSM: aMSISDN smscAddr: aServiceCenter invocation: anInvocation ifAbsent: aBlock
 	| aSubscriber smppConnection |
-	aSubscriber := homeRoutingServer database findMSISDN: aMSISDN.
+	aSubscriber := hlr database findMSISDN: aMSISDN.
 	aSubscriber ifNil: [
 			self logError: ('ID(<1p>) HomeRoutingDialogue no subscriber MSISDN(<2s>) '
 							expandMacrosWith: self id with: aMSISDN) area: #home.
@@ -10,7 +10,7 @@ handleSRiForSM: aMSISDN smscAddr: aServiceCenter invocation: anInvocation ifAbse
 			^false].
 
 	"Is there a SMPP connection?"
-	smppConnection := homeRoutingServer selectSMPPConnection.
+	smppConnection := hlr selectSMPPConnection.
 	smppConnection ifNil: [
 		self logError: ('ID(<1p>) HomeRoutingDialogue no subscriber SMPP connection IMSI(<2s>) '
 						expandMacrosWith: self id with: aSubscriber imsi) area: #home.
@@ -23,7 +23,7 @@ handleSRiForSM: aMSISDN smscAddr: aServiceCenter invocation: anInvocation ifAbse
 	anInvocation returnResultLast: (ASN1Dictionary new
 					at: 'imsi' put: aSubscriber imsi toTBCD;
 					at: 'locationInfoWithLMSI' put: (ASN1Dictionary new
-							at: 'networkNode-Number' put: homeRoutingServer mscNumber toE164;
+							at: 'networkNode-Number' put: hlr mscNumber toE164;
 							yourself);
 					yourself).
 	self requestTcEnd: false.

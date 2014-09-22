@@ -4,7 +4,7 @@ dispatchInvocation: anInvocation
 	selector := anInvocation normalizedOperationName.
 
 	"Abort the entire dialogue in case we don't know the invocation."
-	(self respondsTo: selector)
+	(self class includesLocalSelector: selector)
 		ifFalse: [
 			
 			self logError: ('ID(<1p>) HomeRoutingDialogue not handler for: <2s>' expandMacrosWith: self id with:  selector) area: #home.

@@ -6,10 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"homeRoutingServer",
 		"sawInvocation" ],
 	"name" : "HomeRoutingDialogue",
 	"pools" : [
 		 ],
-	"super" : "TCAPDialogue",
+	"super" : "HLRDialogue",
 	"type" : "normal" }
