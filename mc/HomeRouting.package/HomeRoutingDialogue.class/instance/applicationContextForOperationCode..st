@@ -5,8 +5,6 @@ applicationContextForOperationCode: aNumber
 
 	self
 		logDebug: ('ID(<1p>) Unknown applicationContextForOperation invoke(<2p>)' expandMacrosWith: self id with:  aNumber) 		area: #home.
-	aNumber = 45
-		ifTrue: [^(self tcapModel bindingNamed: 'shortMsgGatewayContext-v2') value].
 	"Orange? likes to send forwardSM without ACN"
 	aNumber = 46
 		ifTrue: [^(self tcapModel bindingNamed: 'mo-ShortMsgRelayPackage-v2') value].
