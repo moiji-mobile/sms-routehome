@@ -3,6 +3,12 @@ dispatchInvocation: anInvocation
 	| selector |
 	selector := anInvocation normalizedOperationName.
 
+	"The HLR may handle this. This means the normalizedOperatorName
+	will be created twice right now."
+	(#(#reportSMDeliveryStatusV2: #reportSMDeliveryStatusV3:) includes: selector) ifTrue: [
+		^super dispatchInvocation: anInvocation
+	].
+
 	"Abort the entire dialogue in case we don't know the invocation."
 	(self class includesLocalSelector: selector)
 		ifFalse: [

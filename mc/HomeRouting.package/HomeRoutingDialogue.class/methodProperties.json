@@ -3,13 +3,10 @@
 		 },
 	"instance" : {
 		"applicationContextForOperationCode:" : "HolgerHansPeterFreyther 9/22/2014 16:25",
-		"dispatchInvocation:" : "HolgerHansPeterFreyther 9/22/2014 16:16",
+		"dispatchInvocation:" : "HolgerHansPeterFreyther 9/22/2014 16:57",
 		"forwardSM:" : "HolgerHansPeterFreyther 9/22/2014 16:07",
-		"handleSMDeliveryStatus:invocation:operation:" : "HolgerHansPeterFreyther 9/22/2014 16:00",
 		"handleSRiForSM:smscAddr:invocation:ifAbsent:" : "HolgerHansPeterFreyther 9/22/2014 16:00",
 		"moForwardSM:" : "HolgerHansPeterFreyther 9/22/2014 16:00",
 		"mtForwardSM:" : "HolgerHansPeterFreyther 9/22/2014 16:00",
-		"reportSMDeliveryStatusV2:" : "HolgerHansPeterFreyther 8/20/2014 18:09",
-		"reportSMDeliveryStatusV3:" : "HolgerHansPeterFreyther 8/20/2014 18:09",
 		"sendRoutingInfoForSMV2:" : "HolgerHansPeterFreyther 8/17/2014 13:06",
 		"sendRoutingInfoForSMV3:" : "HolgerHansPeterFreyther 8/17/2014 13:04" } }
