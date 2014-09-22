@@ -1,6 +1,6 @@
 as yet unclassified
 forwardSM: aDialogue invocation: anInvocation
-	| deliverSM  smppCommand imsi destNumber selectedSMPPConnection |
+	| deliverSM  smppCommand imsi aSubscriber selectedSMPPConnection |
 	
 	self logDebug: ('ID(<1p>) Requested to forward SMS'
 						expandMacrosWith: aDialogue id) area: #home.
@@ -24,7 +24,8 @@ forwardSM: aDialogue invocation: anInvocation
 	imsi := imsi fromTBCD.
 
 	"Reverse look-up, probably too slow in the long run!"
-	destNumber := subscriberMap keyAtValue: imsi ifAbsent: [
+	aSubscriber := database findImsi: imsi.
+	aSubscriber ifNil: [
 		"Need to have a valid IMSI..."
 		self logError: ('ID(<1p>) IMSI(<2s>) was not found as value in map'
 						expandMacrosWith: aDialogue id with: imsi) area: #home.
@@ -32,7 +33,7 @@ forwardSM: aDialogue invocation: anInvocation
 		^aDialogue requestTcEnd: false.
 	].
 
-	deliverSM := self createDeliverSM: anInvocation destinationNumber: destNumber.
+	deliverSM := self createDeliverSM: anInvocation destinationNumber: aSubscriber msisdn.
 	deliverSM ifNil: [
 		self logError: ('ID(<1p>) IMSI(<2s>) failed to create deliverSM SMPP PDU'
 						expandMacrosWith: aDialogue id with: imsi) area: #home.

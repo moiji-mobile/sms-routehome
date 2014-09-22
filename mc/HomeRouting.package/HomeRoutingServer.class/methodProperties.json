@@ -4,11 +4,9 @@
 	"instance" : {
 		"continueOrEnd:invocation:" : "HolgerHansPeterFreyther 8/7/2014 14:14",
 		"createDeliverSM:destinationNumber:" : "HolgerHansPeterFreyther 8/8/2014 18:03",
-		"endPoint:" : "HolgerHansPeterFreyther 7/16/2014 08:37",
 		"formatForDeliverSM:on:" : "HolgerHansPeterFreyther 8/8/2014 11:18",
-		"forwardSM:invocation:" : "HolgerHansPeterFreyther 8/20/2014 15:11",
-		"hlrNumber:" : "HolgerHansPeterFreyther 7/16/2014 08:36",
-		"initialize" : "HolgerHansPeterFreyther 9/22/2014 14:37",
+		"forwardSM:invocation:" : "HolgerHansPeterFreyther 9/22/2014 15:30",
+		"initialize" : "HolgerHansPeterFreyther 9/22/2014 15:22",
 		"localSCCPAddress" : "HolgerHansPeterFreyther 8/20/2014 21:12",
 		"mscNumber" : "HolgerHansPeterFreyther 7/16/2014 09:54",
 		"mscNumber:" : "HolgerHansPeterFreyther 7/16/2014 09:55",
@@ -19,6 +17,4 @@
 		"smppConnectionManager:" : "HolgerHansPeterFreyther 7/28/2014 18:07",
 		"smppError:invocation:" : "HolgerHansPeterFreyther 8/8/2014 17:58",
 		"smppResult:invocation:" : "HolgerHansPeterFreyther 8/8/2014 17:58",
-		"smppTimeout:invocation:" : "HolgerHansPeterFreyther 8/8/2014 17:58",
-		"subscriberMap" : "HolgerHansPeterFreyther 7/16/2014 09:54",
-		"subscriberMap:" : "HolgerHansPeterFreyther 7/16/2014 08:36" } }
+		"smppTimeout:invocation:" : "HolgerHansPeterFreyther 8/8/2014 17:58" } }

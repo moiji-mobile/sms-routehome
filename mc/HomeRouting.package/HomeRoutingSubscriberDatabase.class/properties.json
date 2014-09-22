@@ -6,11 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"mscNumber",
-		"smppConnection",
-		"smppConnectionManager" ],
-	"name" : "HomeRoutingServer",
+		"homeRoutingServer" ],
+	"name" : "HomeRoutingSubscriberDatabase",
 	"pools" : [
 		 ],
-	"super" : "HLR",
+	"super" : "HLRInImageDatabase",
 	"type" : "normal" }

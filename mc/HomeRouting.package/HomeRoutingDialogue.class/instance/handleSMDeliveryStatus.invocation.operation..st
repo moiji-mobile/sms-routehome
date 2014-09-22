@@ -1,7 +1,8 @@
 as yet unclassified
 handleSMDeliveryStatus: aMSISDN invocation: anInvocation operation: anOperationName
-	| imsi |
-	imsi := homeRoutingServer subscriberMap at: aMSISDN ifAbsent: [
+	| aSubscriber |
+	aSubscriber := homeRoutingServer database findMSISDN: aMSISDN.
+	aSubscriber ifNil: [
 		self logError: ('ID(<1p>) HomeRoutingDialogue no subscriber MSISDN(<2s>) '
 						expandMacrosWith: self id with: aMSISDN) area: #home.
 		anInvocation returnError: 'unknownSubscriber' with: nil.
@@ -10,10 +11,5 @@ handleSMDeliveryStatus: aMSISDN invocation: anInvocation operation: anOperationN
 
 	"We will need to remember information now."
 	anInvocation returnResultLast: nil.
-
-	"And say that we will remember it."
-	(anInvocation argument sm_DeliveryOutcome value = 'successfulTransfer') ifTrue: [
-		^self requestTcEnd: false].
-
 	self requestTcEnd: false.
 	
