@@ -1,3 +1,7 @@
 shortMsgRelayPackage
 mtForwardSM: anInvocation
-	hlr forwardSM: self invocation: anInvocation
+	HomeroutingForwardSM new
+		hlr: hlr;
+		dialogue: self;
+		invocation: anInvocation;
+		forwardSM.

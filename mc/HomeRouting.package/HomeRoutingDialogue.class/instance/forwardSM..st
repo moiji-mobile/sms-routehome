@@ -1,3 +1,8 @@
 shortMsgRelayPackage
 forwardSM: anInvocation
-	hlr forwardSM: self invocation: anInvocation
+	"TODO. Extract IMSI and use execute.."
+	HomeroutingForwardSM new
+		hlr: hlr;
+		dialogue: self;
+		invocation: anInvocation;
+		forwardSM.

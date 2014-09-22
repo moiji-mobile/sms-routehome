@@ -1,4 +1,4 @@
-smpp
+as yet unclassified
 formatForDeliverSM: tpdu on: deliverSM
 	| data |
 	"Depending on the TPDU we have to set the esmClass, dcs and either

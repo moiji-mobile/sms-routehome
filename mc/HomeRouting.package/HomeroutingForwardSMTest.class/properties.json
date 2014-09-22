@@ -8,7 +8,7 @@
 	"instvars" : [
 		"server",
 		"res" ],
-	"name" : "HomeRoutingServerTest",
+	"name" : "HomeroutingForwardSMTest",
 	"pools" : [
 		 ],
 	"super" : "TestCase",

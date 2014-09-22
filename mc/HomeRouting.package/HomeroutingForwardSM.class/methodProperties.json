@@ -1,0 +1,12 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"continueOrEnd" : "HolgerHansPeterFreyther 9/22/2014 18:47",
+		"createDeliverSMFor:" : "HolgerHansPeterFreyther 9/22/2014 18:55",
+		"formatForDeliverSM:on:" : "HolgerHansPeterFreyther 9/22/2014 18:55",
+		"forwardSM" : "HolgerHansPeterFreyther 9/22/2014 20:43",
+		"reportUnhandled:" : "HolgerHansPeterFreyther 9/22/2014 18:54",
+		"smppError" : "HolgerHansPeterFreyther 9/22/2014 20:43",
+		"smppResult" : "HolgerHansPeterFreyther 9/22/2014 20:39",
+		"smppTimeout" : "HolgerHansPeterFreyther 9/22/2014 20:44" } }
