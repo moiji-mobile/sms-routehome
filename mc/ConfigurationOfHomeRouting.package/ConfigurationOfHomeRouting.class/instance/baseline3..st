@@ -14,7 +14,7 @@ baseline3: spec
 			project: 'TCAP' with: [
 				spec
 					className: #ConfigurationOfTCAP;
-					versionString: '0.2.1';
+					versionString: #'bleedingEdge';
 					repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main' ];
 			project: 'ASN1' with: [
 				spec
@@ -34,7 +34,7 @@ baseline3: spec
 			project: 'HLR' with: [
 				spec
 					className: #ConfigurationOfHLR;
-					versionString: #'development';
+					versionString: #'bleedingEdge';
 					repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main/' ].
 		spec 
 			package: 'SMPP-Codec' with: [
