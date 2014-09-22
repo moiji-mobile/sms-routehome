@@ -34,7 +34,7 @@ baseline3: spec
 			project: 'HLR' with: [
 				spec
 					className: #ConfigurationOfHLR;
-					versionString: #'bleedingEdge';
+					versionString: #'development';
 					repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main/' ].
 		spec 
 			package: 'SMPP-Codec' with: [
