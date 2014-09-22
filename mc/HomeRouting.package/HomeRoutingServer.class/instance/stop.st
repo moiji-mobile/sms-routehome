@@ -1,3 +1,0 @@
-creation
-stop
-	pendingAlertsTimer cancel.

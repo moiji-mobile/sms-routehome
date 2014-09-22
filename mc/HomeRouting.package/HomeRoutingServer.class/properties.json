@@ -11,9 +11,7 @@
 		"endPoint",
 		"mscNumber",
 		"smppConnection",
-		"smppConnectionManager",
-		"pendingAlerts",
-		"pendingAlertsTimer" ],
+		"smppConnectionManager" ],
 	"name" : "HomeRoutingServer",
 	"pools" : [
 		 ],

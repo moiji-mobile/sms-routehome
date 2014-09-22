@@ -30,5 +30,4 @@ testReportSMDeliveryStatusV2NoOutcome
 		applicationContextName: (self applicationContextFor: operationName).
 	
 	self assert: returnLastSeen.
-	self deny: lastInvoke isNil.
-	self assert: lastInvoke operationName equals: 'informServiceCentreV2'.
+	self assert: lastInvoke isNil.
