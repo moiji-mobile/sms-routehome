@@ -5,7 +5,8 @@ dispatchInvocation: anInvocation
 
 	"The HLR may handle this. This means the normalizedOperatorName
 	will be created twice right now."
-	(#(#reportSMDeliveryStatusV2: #reportSMDeliveryStatusV3:) includes: selector) ifTrue: [
+	(#(#reportSMDeliveryStatusV2: #reportSMDeliveryStatusV3:
+	     #sendRoutingInfoForSMV2: sendRoutingInfoForSMV3:) includes: selector) ifTrue: [
 		^super dispatchInvocation: anInvocation
 	].
 
