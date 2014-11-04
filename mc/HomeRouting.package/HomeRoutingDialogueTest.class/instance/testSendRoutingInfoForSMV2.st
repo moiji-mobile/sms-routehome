@@ -9,7 +9,7 @@ testSendRoutingInfoForSMV2
 				yourself.
 
 	operationName := 'sendRoutingInfoForSMV2'.
-	dialogue := testEndPoint createDialogue.
+	dialogue := testEndPoint newDialogue.
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
 				class: TCAPReportSuccessAndFailure  timeout: 500.

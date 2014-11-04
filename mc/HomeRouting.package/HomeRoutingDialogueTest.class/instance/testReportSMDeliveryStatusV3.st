@@ -11,7 +11,7 @@ testReportSMDeliveryStatusV3
 				yourself.
 
 	operationName := 'reportSM-DeliveryStatusV3'.
-	dialogue := testEndPoint createDialogue.
+	dialogue := testEndPoint newDialogue.
 	dialogue
 		onPAbort: [:msg | self assert: false];
 		onUAbort: [:msg | self assert: false].
