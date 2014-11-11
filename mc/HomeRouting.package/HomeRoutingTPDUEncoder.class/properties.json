@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "HomeRoutingTPDUEncoder",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
