@@ -38,7 +38,7 @@ formatForDeliverSM: tpdu on: deliverSM
 		bytes := GSMDecoding expand: bytes.
 		bytes := bytes readStream next: (tpdu at: 'TP-UD-Len').
 		
-		"With TP-UDHI and 7bit encoding there are some bytes we need to
+		"With TP-UDHIand 7bit encoding there are some bytes we need to
 		skip and re-do now."
 		(tpdu at: 'TP-UDHI') ifTrue: [
 			| skip fillBits |
