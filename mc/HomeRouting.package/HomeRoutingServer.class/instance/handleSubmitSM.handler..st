@@ -3,7 +3,7 @@ handleSubmitSM: aMessage handler: aHandler
 	"Start an Operation now"
 	| tpdu encoded |
 	tpdu := aMessage body toTPDUDictionary.
-	encoded := HomeRoutingTPDUHelper encode: tpdu.
+	encoded := HomeRoutingTPDUEncoder encode: tpdu.
 	HomeRoutingForwardMTSM new
 		dialogueHandler: endPoint;
 		hlr: self;
