@@ -1,0 +1,1 @@
+I extract information from a GSM03.40 message.

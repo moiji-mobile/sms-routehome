@@ -2,11 +2,11 @@ as yet unclassified
 testExtractUDHHeader
 	| inp extracted |
 	inp := ByteArray readHexFrom: '640c91533458001091000041804031016000a0050003d90201a2f7b29c9eafa7dff0f9dc4c3e9fd16b36dbed1ee3f1ee76fbbd76bb586490596606e1f178d07c8e06a5f3f5b39a9c4e9fcfe4b4fa8c9ed7d3e8391a9d9ea36b38994c60328546bdd56fb74ba1509bb2aab4416d521bdec6a776bb91c8a9326bb41685cae55469b54e914ae554683d56a7caa91269454e975aa5f5383d2aa74aab70aa9c2e85'.
-	extracted := HomeRoutingTPDUHelper extract: inp.
+	extracted := HomeRoutingTPDUExtractor extract: inp.
 	self assert: (extracted at: 'TP-RP') equals: false.
 	self assert: (extracted at: 'TP-UDHI') equals: true.
 	self assert: (extracted at: 'TP-SRI') equals: true.
-	self deny: (extracted at: 'TP-MMS').
+	self assert: (extracted at: 'TP-MMS') equals: true.
 	self assert: (extracted at: 'TP-MTI') equals: 0.
 
 	self assert: (extracted at: 'npi') equals: 1.

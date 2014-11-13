@@ -1,1 +1,0 @@
-I extract information from a GSM03.40 message and can create a messga e again.

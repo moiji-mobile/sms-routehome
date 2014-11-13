@@ -2,15 +2,13 @@
 	"class" : {
 		 },
 	"instance" : {
-		"applicationContextFor:" : "HolgerHansPeterFreyther 7/16/2014 08:38",
+		"applicationContextFor:" : "NorbertHartl 11/11/2014 14:04",
 		"hlrAddr" : "HolgerHansPeterFreyther 7/16/2014 08:37",
 		"localAddr" : "HolgerHansPeterFreyther 7/16/2014 08:37",
 		"setUp" : "HolgerHansPeterFreyther 9/22/2014 15:28",
 		"testDelayedForwardSM" : "NorbertHartl 11/4/2014 14:25",
 		"testForwardSM" : "NorbertHartl 11/4/2014 14:25",
 		"testForwardSMMoreMessagesToSend" : "NorbertHartl 11/4/2014 14:25",
-		"testIncomingSubmitSM" : "HolgerHansPeterFreyther 11/11/2014 09:59",
-		"testIncomingSubmitSMNoSubscriber" : "HolgerHansPeterFreyther 11/4/2014 21:54",
 		"testMOForwardSM" : "NorbertHartl 11/4/2014 14:25",
 		"testMOForwardSMInvalidIMSI" : "NorbertHartl 11/4/2014 14:25",
 		"testMTForwardSM" : "NorbertHartl 11/4/2014 14:25",
