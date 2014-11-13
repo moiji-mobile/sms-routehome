@@ -6,9 +6,10 @@
 		 ],
 	"commentStamp" : "HolgerHansPeterFreyther 11/4/2014 07:17",
 	"instvars" : [
-		 ],
-	"name" : "HomeroutingForwardSM",
+		"smRPUI",
+		"invoke" ],
+	"name" : "HomeRoutingForwardMTSM",
 	"pools" : [
 		 ],
-	"super" : "HLROperationBase",
+	"super" : "HLRMSISDNOperationBase",
 	"type" : "normal" }
