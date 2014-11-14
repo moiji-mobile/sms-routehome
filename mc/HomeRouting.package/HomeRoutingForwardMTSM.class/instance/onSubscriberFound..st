@@ -25,4 +25,4 @@ onSubscriberFound: aSubscriber
 	dialogue
 		requestTcBeginDestinationAddress: self remoteSCCPAddress
 		originatingAddress: self localSCCPAddress
-		applicationContextName: (self class applicationContextFor: 'forwardSM').
+		applicationContextName: (dialogue applicationContextNamed: 'forwardSM').
