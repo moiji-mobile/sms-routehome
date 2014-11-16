@@ -13,10 +13,8 @@ setUp
 					imsi: '4321';
 					yourself).
 
-	testEndPoint := TCAPTestServiceEndPoint new
-		asn1Model: self asn1Model.
-	hlrEndPoint := TCAPTestServiceEndPoint newHomeRouting
-		asn1Model: self asn1Model.
+	testEndPoint := TCAPTestServiceEndPoint new.
+	hlrEndPoint := TCAPTestServiceEndPoint newHomeRouting.
 	hlrEndPoint transactionCoordinator: TCAPTestTransactionCoordinator new.
 	hlrEndPoint factory homeRoutingServer: testHomeRouting.
 	testHomeRouting endPoint: hlrEndPoint.

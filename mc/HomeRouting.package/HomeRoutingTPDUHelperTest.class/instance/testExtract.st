@@ -2,11 +2,11 @@ as yet unclassified
 testExtract
 	| inp extracted |
 	inp := #[4 11 145 51 102 2 19 69 244 0 0 65 112 113 129 4 113 128 6 210 114 185 92 70 3].
-	extracted := HomeRoutingTPDUExtractor extract: inp.
+	extracted := HomeRoutingTPDUHelper extract: inp.
 	self assert: (extracted at: 'TP-RP') equals: false.
 	self assert: (extracted at: 'TP-UDHI') equals: false.
 	self assert: (extracted at: 'TP-SRI') equals: false.
-	self assert: (extracted at: 'TP-MMS') equals: true.
+	self deny: (extracted at: 'TP-MMS').
 	self assert: (extracted at: 'TP-MTI') equals: 0.
 
 	self assert: (extracted at: 'npi') equals: 1.

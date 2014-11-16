@@ -7,7 +7,7 @@ extract: aByteArray
 	
 	"Read the header"
 	res at: 'TP-MTI' put: (byte bitAnd: 2r11).
-	res at: 'TP-MMS' put: (byte bitAnd: 2r100) >0.
+	res at: 'TP-MMS' put: (byte bitAnd: 2r100) = 0.
 	res at: 'TP-SRI' put: (byte bitAnd:  2r100000) > 0.
 	udhi := (byte bitAnd: 2r1000000) > 0.
 	res at: 'TP-UDHI' put: udhi.
