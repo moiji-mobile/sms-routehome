@@ -2,11 +2,11 @@ as yet unclassified
 testExtractEvenNumber
 	| inp extracted |
 	inp := ByteArray readHexFrom: '240c9153345800109100004170031102950012d4f29c0e32cbdf6dd0d3ddba87ede539'.
-	extracted := HomeRoutingTPDUExtractor extract: inp.
+	extracted := HomeRoutingTPDUHelper extract: inp.
 	self assert: (extracted at: 'TP-RP') equals: false.
 	self assert: (extracted at: 'TP-UDHI') equals: false.
 	self assert: (extracted at: 'TP-SRI') equals: true.
-	self assert: (extracted at: 'TP-MMS') equals: true.
+	self deny: (extracted at: 'TP-MMS').
 	self assert: (extracted at: 'TP-MTI') equals: 0.
 
 	self assert: (extracted at: 'npi') equals: 1.

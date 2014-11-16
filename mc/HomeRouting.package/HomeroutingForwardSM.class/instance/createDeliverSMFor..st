@@ -6,7 +6,7 @@ createDeliverSMFor: destinationNumber
 	[
 		| smRPUI |
 		smRPUI := invocation argument sm_RP_UI.
-		tpdu := HomeRoutingTPDUExtractor extract: smRPUI.
+		tpdu := HomeRoutingTPDUHelper extract: smRPUI.
 	] on: Error do: [:err |
 		err logException: ('Dest(<1s>) couldn''t parse TPDU' expandMacrosWith: destinationNumber) area: #home.
 		^nil
