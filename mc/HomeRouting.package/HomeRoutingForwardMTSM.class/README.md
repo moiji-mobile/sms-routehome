@@ -1,1 +1,1 @@
-SMPP to MAP
+SMPP to MAP without doing a SRIForSM
