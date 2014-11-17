@@ -14,10 +14,10 @@ testRoundtripUDH
 	resDict := Dictionary new.
 	HomeRoutingTPDUHelper formatToGSM7Bit: resDict on: smppMessage.
 
-	self assert: (inpDict at: 'TP-UDHI') equals: (resDict at: 'TP-UDHI').
-	self assert: (inpDict at: 'TP-UDH') equals: (resDict at: 'TP-UDH').
-	self assert: (inpDict at: 'TP-UD-Len') equals: (resDict at: 'TP-UD-Len').
-	self assert: (inpDict at: 'TP-UD') equals: (resDict at: 'TP-UD').
+	self assert: (resDict at: 'TP-UDHI') equals: (inpDict at: 'TP-UDHI').
+	self assert: (resDict at: 'TP-UDH') equals: (inpDict at: 'TP-UDH').
+	self assert: (resDict at: 'TP-UD-Len') equals: (inpDict at: 'TP-UD-Len').
+	self assert: (resDict at: 'TP-UD') equals: (inpDict at: 'TP-UD').
 
 
 	"Try again with a SubmitSM.."
@@ -27,7 +27,7 @@ testRoundtripUDH
 	resDict := Dictionary new.
 	HomeRoutingTPDUHelper formatToGSM7Bit: resDict on: smppMessage.
 
-	self assert: (inpDict at: 'TP-UDHI') equals: (resDict at: 'TP-UDHI').
-	self assert: (inpDict at: 'TP-UDH') equals: (resDict at: 'TP-UDH').
-	self assert: (inpDict at: 'TP-UD-Len') equals: (resDict at: 'TP-UD-Len').
-	self assert: (inpDict at: 'TP-UD') equals: (resDict at: 'TP-UD').
+	self assert: (resDict at: 'TP-UDHI') equals: (inpDict at: 'TP-UDHI').
+	self assert: (resDict at: 'TP-UDH') equals: (inpDict at: 'TP-UDH').
+	self assert: (resDict at: 'TP-UD-Len') equals: (inpDict at: 'TP-UD-Len').
+	self assert: (resDict at: 'TP-UD') equals: (inpDict at: 'TP-UD').
