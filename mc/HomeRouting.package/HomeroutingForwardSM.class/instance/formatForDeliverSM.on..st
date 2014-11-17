@@ -13,7 +13,7 @@ formatForDeliverSM: tpdu on: deliverSM
 
 	"Look at the DCS of the message"
 	(tpdu at: 'TP-DCS') = 0 ifTrue: [
-		HomeRoutingTPDUHelper formatGSM7Bit: tpdu on: deliverSM.
+		HomeRoutingTPDUHelper formatFromGSM7Bit: tpdu on: deliverSM.
 		^deliverSM].
 	
 	(((tpdu at: 'TP-DCS') bitAnd: 2r1100) = 2r1000) ifTrue: [

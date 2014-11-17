@@ -1,5 +1,5 @@
 as yet unclassified
-formatGSM7Bit: tpdu on: smppMessage
+formatFromGSM7Bit: tpdu on: smppMessage
 	| data bytes udhi |
 	data := #[] toMessage.
 	
@@ -41,6 +41,7 @@ formatGSM7Bit: tpdu on: smppMessage
 		bytes := data.
 	].
 
-	smppMessage
+	^smppMessage
 		dataCoding: 0;
-		shortMessage: bytes asByteArray
+		shortMessage: bytes asByteArray;
+		yourself
