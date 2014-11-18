@@ -4,7 +4,7 @@ testIncomingSubmitSM
 
 	"Add extra subscriber"
 	testHomeRouting database
-		insert: (Subscriber new
+		insert: (HomeRoutingSubscriber new
 					msisdn: '9225001';
 					imsi: '98765';
 					yourself).
