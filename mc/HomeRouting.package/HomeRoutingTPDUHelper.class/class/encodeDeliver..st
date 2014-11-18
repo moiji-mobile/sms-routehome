@@ -1,5 +1,5 @@
 as yet unclassified
-encode: tpdu
+encodeDeliver: tpdu
 	| hdr oa size data |
 	size := (tpdu at: 'TP-OA') size.
 	hdr := ((tpdu at: 'TP-RP') asBit) bitShift: 7.

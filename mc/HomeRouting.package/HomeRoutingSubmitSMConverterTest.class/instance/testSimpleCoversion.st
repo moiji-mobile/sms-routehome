@@ -17,4 +17,4 @@ testSimpleCoversion
 	self assert: (tpdu at: 'TP-UD') equals: #[196 116 121 14 74 207 233 160 114 218 93 6 81 203 115 186 59 60 70 203 211 99 52 61 4 2 201 96 49 90 11 54 107 193 98 223 152 205 69 131 185 104 50].
 	self assert: (tpdu at: 'TP-UD-Len') equals: 49.
 
-	binary := HomeRoutingTPDUHelper encode: tpdu.
+	binary := HomeRoutingTPDUHelper encodeDeliver: tpdu.
