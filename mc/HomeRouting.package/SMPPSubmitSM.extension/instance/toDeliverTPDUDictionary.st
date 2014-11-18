@@ -1,5 +1,5 @@
 *HomeRouting-Core
-toTPDUDictionary
+toDeliverTPDUDictionary
 	"Convert the SMPP body into a dictionary for encoding"
 	| result moreMessages dcs scts |
 	result := Dictionary new.

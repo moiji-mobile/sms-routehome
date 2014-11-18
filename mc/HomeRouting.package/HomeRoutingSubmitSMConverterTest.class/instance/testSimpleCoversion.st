@@ -2,7 +2,7 @@ as yet unclassified
 testSimpleCoversion
 	| submitSM tpdu binary |
 	submitSM := SMPPMessage readFrom: SMPPMessageTest new exampleSubmitSM readStream.
-	tpdu := submitSM body toTPDUDictionary.
+	tpdu := submitSM body toDeliverTPDUDictionary.
 	self deny: (tpdu at: 'TP-RP').
 	self deny: (tpdu at: 'TP-UDHI').
 	self deny: (tpdu at: 'TP-SRI').
