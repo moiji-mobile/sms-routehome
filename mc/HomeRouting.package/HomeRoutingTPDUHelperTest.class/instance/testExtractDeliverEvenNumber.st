@@ -1,5 +1,5 @@
 as yet unclassified
-testExtractEvenNumber
+testExtractDeliverEvenNumber
 	| inp extracted |
 	inp := ByteArray readHexFrom: '240c9153345800109100004170031102950012d4f29c0e32cbdf6dd0d3ddba87ede539'.
 	extracted := HomeRoutingTPDUHelper extract: inp.

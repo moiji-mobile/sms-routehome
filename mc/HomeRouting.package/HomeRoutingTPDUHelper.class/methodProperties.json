@@ -1,7 +1,10 @@
 {
 	"class" : {
 		"encodeDeliver:" : "HolgerHansPeterFreyther 11/18/2014 18:08",
-		"extract:" : "HolgerHansPeterFreyther 11/13/2014 21:54",
+		"encodeSubmit:" : "HolgerHansPeterFreyther 11/18/2014 19:29",
+		"extract:" : "HolgerHansPeterFreyther 11/18/2014 19:05",
+		"extractDeliverFrom:" : "HolgerHansPeterFreyther 11/18/2014 19:05",
+		"extractSubmitFrom:" : "HolgerHansPeterFreyther 11/18/2014 19:25",
 		"formatFromGSM7Bit:on:" : "HolgerHansPeterFreyther 11/17/2014 11:07",
 		"formatToGSM7Bit:on:" : "HolgerHansPeterFreyther 11/17/2014 14:03" },
 	"instance" : {

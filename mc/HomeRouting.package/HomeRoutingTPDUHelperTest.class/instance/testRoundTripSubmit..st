@@ -1,7 +1,7 @@
 as yet unclassified
-testRoundTrip: anInput
+testRoundTripSubmit: anInput
 	| extracted encoded |
 	extracted := HomeRoutingTPDUHelper extract: anInput.
-	encoded := HomeRoutingTPDUHelper encodeDeliver: extracted.
+	encoded := HomeRoutingTPDUHelper encodeSubmit: extracted.
 	self assert: encoded equals: anInput.
 	
