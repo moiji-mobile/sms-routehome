@@ -4,7 +4,6 @@ handleSubmitSM: aMessage handler: aHandler
 	database newQuery
 		msisdn: aMessage body sourceAddress;
 		onSuccess: [:subscriber |
-			"TODO: Determine direction"
 			self sendMobileOrigantingSMS: aMessage handler: aHandler subscriber: subscriber];
 		onFailure: [:reason |
 			self smppReturnFailureOn: aHandler for: aMessage];

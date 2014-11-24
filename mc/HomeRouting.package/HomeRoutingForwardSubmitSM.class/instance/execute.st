@@ -3,10 +3,10 @@ execute
 	| param |
 	param := ASN1Dictionary new
 		at: 'sm-RP-DA' put: (ASN1Dictionary new
-			at: 'imsi' put: subscriber imsi toTBCD;
+			at: 'serviceCentreAddressDA' put: hlr mscNumber toE164;
 			yourself);
 		at: 'sm-RP-OA' put: (ASN1Dictionary new
-			at: 'serviceCentreAddressOA' put: hlr mscNumber toE164;
+			at: 'msisdn' put: subscriber msisdn toE164;
 			yourself);
 		at: 'sm-RP-UI' put: smRPUI;
 		yourself.

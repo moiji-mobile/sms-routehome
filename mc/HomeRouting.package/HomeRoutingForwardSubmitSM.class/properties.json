@@ -8,8 +8,9 @@
 	"instvars" : [
 		"smRPUI",
 		"invoke",
-		"subscriber" ],
-	"name" : "HomeRoutingForwardMTSM",
+		"subscriber",
+		"msisdn" ],
+	"name" : "HomeRoutingForwardSubmitSM",
 	"pools" : [
 		 ],
 	"super" : "HLROperationBase",

@@ -1,9 +1,9 @@
 as yet unclassified
 sendMobileOrigantingSMS: aMessage handler: aHandler subscriber: aSubscriber
 	| tpdu encoded |
-	tpdu := aMessage body toDeliverTPDUDictionary.
-	encoded := HomeRoutingTPDUHelper encodeDeliver: tpdu.
-	HomeRoutingForwardMTSM new
+	tpdu := aMessage body toSubmitTPDUDictionary.
+	encoded := HomeRoutingTPDUHelper encodeSubmit: tpdu.
+	HomeRoutingForwardSubmitSM new
 		dialogueHandler: endPoint;
 		hlr: self;
 		hlrAddress: self hlrNumber;
