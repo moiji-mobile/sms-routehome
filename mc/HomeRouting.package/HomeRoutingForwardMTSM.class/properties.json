@@ -4,12 +4,13 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "HolgerHansPeterFreyther 11/17/2014 15:37",
+	"commentStamp" : "HolgerHansPeterFreyther 11/18/2014 20:10",
 	"instvars" : [
 		"smRPUI",
-		"invoke" ],
+		"invoke",
+		"subscriber" ],
 	"name" : "HomeRoutingForwardMTSM",
 	"pools" : [
 		 ],
-	"super" : "HLRMSISDNOperationBase",
+	"super" : "HLROperationBase",
 	"type" : "normal" }

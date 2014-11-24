@@ -1,18 +1,11 @@
 as yet unclassified
 handleSubmitSM: aMessage handler: aHandler
 	"Start an Operation now"
-	| tpdu encoded |
-	tpdu := aMessage body toDeliverTPDUDictionary.
-	encoded := HomeRoutingTPDUHelper encodeDeliver: tpdu.
-	HomeRoutingForwardMTSM new
-		dialogueHandler: endPoint;
-		hlr: self;
-		hlrAddress: self hlrNumber;
-		remoteGlobalTitle: mscNumber;
+	database newQuery
 		msisdn: aMessage body sourceAddress;
-		smRPUI: encoded;
-		onSuccess: [:res |
-			self smppReturnSuccessOn: aHandler for: aMessage with: res];
-		onFailure: [
+		onSuccess: [:subscriber |
+			"TODO: Determine direction"
+			self sendMobileOrigantingSMS: aMessage handler: aHandler subscriber: subscriber];
+		onFailure: [:reason |
 			self smppReturnFailureOn: aHandler for: aMessage];
-		execute.
+		start.

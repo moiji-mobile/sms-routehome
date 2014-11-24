@@ -1,9 +1,9 @@
 as yet unclassified
-onSubscriberFound: aSubscriber 
+execute
 	| param |
 	param := ASN1Dictionary new
 		at: 'sm-RP-DA' put: (ASN1Dictionary new
-			at: 'imsi' put: aSubscriber imsi toTBCD;
+			at: 'imsi' put: subscriber imsi toTBCD;
 			yourself);
 		at: 'sm-RP-OA' put: (ASN1Dictionary new
 			at: 'serviceCentreAddressOA' put: hlr mscNumber toE164;

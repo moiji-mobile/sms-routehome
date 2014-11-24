@@ -1,1 +1,1 @@
-SMPP to MAP without doing a SRIForSM
+SMPP to MAP without doing a SRIForSM (We make a MT Deliver to a SMSC)
