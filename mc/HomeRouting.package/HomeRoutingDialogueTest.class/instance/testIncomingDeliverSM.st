@@ -1,6 +1,6 @@
 as yet unclassified
 testIncomingDeliverSM
-	| deliverSM response mapReqSRI |
+	| deliverSM response mapReqSRI mapReqFwd |
 
 	"Check if we receive a forwardSM.."
 	testEndPoint
@@ -19,6 +19,7 @@ testIncomingDeliverSM
 							yourself).
 					diag requestTcEnd: false].
 				isFwdSM ifTrue: [
+					mapReqFwd := tcapNotify invocation.
 					tcapNotify returnResultLast: nil.
 					diag requestTcEnd: false]]].
 
@@ -28,6 +29,9 @@ testIncomingDeliverSM
 	"Assert we received a mapRequest"
 	self deny: mapReqSRI isNil.
 	self assert: mapReqSRI operationName equals: 'sendRoutingInfoForSMV2'.
+	self assert: mapReqSRI argument sm_RP_PRI.
+	self deny: mapReqFwd isNil.
+	self assert: mapReqFwd operationName equals: 'forwardSM'.
 
 	"We expect that we received an error for the submitSM"
 	self assert: smppConnection sent size equals: 1.

@@ -4,7 +4,7 @@ execute
 	
 	sriArg := ASN1Dictionary new
 				at: 'msisdn' put: msisdnE164;
-				at: 'sm-RP-PRI' put: false;
+				at: 'sm-RP-PRI' put: true;
 				at: 'serviceCentreAddress' put: hlrAddress toE164;
 				yourself.
 
