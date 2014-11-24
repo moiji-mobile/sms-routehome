@@ -10,6 +10,7 @@
 		"testDelayedForwardSM" : "NorbertHartl 11/4/2014 14:25",
 		"testForwardSM" : "NorbertHartl 11/4/2014 14:25",
 		"testForwardSMMoreMessagesToSend" : "NorbertHartl 11/4/2014 14:25",
+		"testIncomingDeliverSM" : "HolgerHansPeterFreyther 11/24/2014 16:41",
 		"testIncomingSubmitSM" : "HolgerHansPeterFreyther 11/18/2014 16:16",
 		"testIncomingSubmitSMNoSubscriber" : "HolgerHansPeterFreyther 11/4/2014 21:54",
 		"testMOForwardSM" : "NorbertHartl 11/4/2014 14:25",

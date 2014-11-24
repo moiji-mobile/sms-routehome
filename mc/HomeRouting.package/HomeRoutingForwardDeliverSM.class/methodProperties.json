@@ -1,0 +1,10 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"execute" : "HolgerHansPeterFreyther 11/24/2014 16:28",
+		"handleSRIForSMResult:" : "HolgerHansPeterFreyther 11/24/2014 16:32",
+		"msisdnE164:" : "HolgerHansPeterFreyther 11/24/2014 15:49",
+		"remoteSCCPAddressForForward:" : "HolgerHansPeterFreyther 11/24/2014 16:34",
+		"remoteSCCPAddressForSRIForSM" : "HolgerHansPeterFreyther 11/24/2014 15:58",
+		"smRPUI:" : "HolgerHansPeterFreyther 11/24/2014 15:25" } }

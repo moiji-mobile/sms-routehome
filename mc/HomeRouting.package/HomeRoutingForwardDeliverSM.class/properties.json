@@ -1,0 +1,15 @@
+{
+	"category" : "HomeRouting-Operations",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"smRPUI",
+		"msisdnE164" ],
+	"name" : "HomeRoutingForwardDeliverSM",
+	"pools" : [
+		 ],
+	"super" : "HLROperationBase",
+	"type" : "normal" }
