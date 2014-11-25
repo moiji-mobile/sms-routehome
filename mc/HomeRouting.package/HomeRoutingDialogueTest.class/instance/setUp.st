@@ -5,6 +5,7 @@ setUp
 	testHomeRouting := HomeRoutingServer new
 			hlrNumber: '35412';
 			mscNumber: '35411';
+			smscNumber: '91143';
 			smppConnection: smppConnection;
 			yourself.
 	testHomeRouting database

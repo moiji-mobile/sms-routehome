@@ -7,7 +7,7 @@ sendMobileOrigantingSMS: aMessage handler: aHandler subscriber: aSubscriber
 		dialogueHandler: endPoint;
 		hlr: self;
 		hlrAddress: self hlrNumber;
-		remoteGlobalTitle: mscNumber;
+		remoteGlobalTitle: (self gtForDestination: aMessage body);
 		smRPUI: encoded;
 		subscriber: aSubscriber;
 		onSuccess: [:res |

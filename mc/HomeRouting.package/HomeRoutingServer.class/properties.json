@@ -8,7 +8,8 @@
 	"instvars" : [
 		"mscNumber",
 		"smppConnection",
-		"smppConnectionManager" ],
+		"smppConnectionManager",
+		"smscNumber" ],
 	"name" : "HomeRoutingServer",
 	"pools" : [
 		 ],

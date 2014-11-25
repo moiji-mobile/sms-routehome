@@ -15,12 +15,11 @@ execute
 		onUAbort: [self signalFailure].
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
-				class: 1 timeout: 60.
+				class: 1 timeout: 500.
 	invoke
 		onReturn: [self signalFailure];
 		onError: [self signalFailure];
 		onReject: [self signalFailure];
-		onLCancel: [self signalFailure];
 		onReturnLast: [:result | self handleSRIForSMResult: result].
 	dialogue
 		requestTcBeginDestinationAddress: self remoteSCCPAddressForSRIForSM
