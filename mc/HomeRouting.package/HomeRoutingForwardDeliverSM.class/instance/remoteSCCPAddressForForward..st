@@ -6,6 +6,6 @@ remoteSCCPAddressForForward: aNetworkNumber
 								nature: SCCPGlobalTitle naiInternationalNumber;
 								plan: SCCPGlobalTitle npISDN;
 								addr: aNetworkNumber;
-								translation: 0;
+								translation: gtTranslation;
 								yourself);
 			yourself

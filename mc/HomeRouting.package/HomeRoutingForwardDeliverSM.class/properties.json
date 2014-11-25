@@ -7,7 +7,8 @@
 	"commentStamp" : "",
 	"instvars" : [
 		"smRPUI",
-		"msisdnE164" ],
+		"msisdnE164",
+		"gtTranslation" ],
 	"name" : "HomeRoutingForwardDeliverSM",
 	"pools" : [
 		 ],
