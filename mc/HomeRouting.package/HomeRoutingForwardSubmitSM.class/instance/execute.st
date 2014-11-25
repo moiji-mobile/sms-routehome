@@ -15,11 +15,12 @@ execute
 	dialogue
 		onPAbort: [self signalFailure];
 		onUAbort: [self signalFailure].
-		invoke := dialogue requestTcInvokeNamed: 'forwardSM' parameters:  param class: 1 timeout: 500.
+		invoke := dialogue requestTcInvokeNamed: 'forwardSM' parameters:  param class: 1 timeout: 60.
 	invoke
 		onReturn: [self signalFailure];
 		onError: [self signalFailure];
 		onReject: [self signalFailure];
+		onLCancel: [self signalFailure];
 		onReturnLast: [:res | self signalSuccess: res].
 
 	dialogue
