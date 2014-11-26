@@ -7,8 +7,10 @@ sendMobileTerminatedSMS: aMessage handler: aHandler
 		dialogueHandler: endPoint;
 		hlr: self;
 		hlrAddress: self hlrNumber;
+		localSSN: #msc;
 		msisdnE164: aMessage body destinationAddressAsE164;
 		gtTranslation: (self gtTranslationForDestination: aMessage body);
+		remoteSSN: #hlr;
 		smRPUI: encoded;
 		onSuccess: [:res |
 			self smppReturnSuccessOn: aHandler for: aMessage with: res];
