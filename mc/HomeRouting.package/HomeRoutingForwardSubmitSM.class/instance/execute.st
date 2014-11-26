@@ -22,8 +22,8 @@ execute
 		onReject: [self signalFailure];
 		onLCancel: [self signalFailure];
 		onReturnLast: [:res | self signalSuccess: res].
-
+	"Pick the shortMsgMO-RelayContext-v2 by hand."
 	dialogue
 		requestTcBeginDestinationAddress: self remoteSCCPAddress
 		originatingAddress: self localSCCPAddress
-		applicationContextName: (dialogue applicationContextNamed: 'forwardSM').
+		applicationContextName: '0.4.0.0.1.0.21.2' asAsn1Oid.
