@@ -15,7 +15,7 @@ execute
 		onUAbort: [self signalFailure].
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
-				class: 1 timeout: 10.
+				class: 1 timeout: 60.
 	invoke
 		onReturn: [self signalFailure];
 		onError: [self signalFailure];
