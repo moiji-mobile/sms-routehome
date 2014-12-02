@@ -1,4 +1,4 @@
-as yet unclassified
+smpp
 smppReturnSuccessOn: aHandler for: incomingMessage with: aResult
 	| response |
 	response := SMPPMessage new

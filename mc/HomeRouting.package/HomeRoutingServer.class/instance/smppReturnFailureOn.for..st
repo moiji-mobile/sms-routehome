@@ -1,4 +1,4 @@
-as yet unclassified
+smpp
 smppReturnFailureOn: aHandler for: incomingMessage
 	| response |
 	incomingMessage body isCommand

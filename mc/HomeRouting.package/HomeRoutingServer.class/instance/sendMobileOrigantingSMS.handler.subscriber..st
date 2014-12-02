@@ -1,4 +1,4 @@
-as yet unclassified
+smpp
 sendMobileOrigantingSMS: aMessage handler: aHandler subscriber: aSubscriber
 	| tpdu encoded |
 	tpdu := aMessage body toSubmitTPDUDictionary.

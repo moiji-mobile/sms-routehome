@@ -1,4 +1,4 @@
-as yet unclassified
+smpp
 sendMobileTerminatedSMS: aMessage handler: aHandler
 	| tpdu encoded |
 	tpdu := aMessage body toDeliverTPDUDictionary.

@@ -1,4 +1,4 @@
-as yet unclassified
+smpp
 handleSubmitSM: aMessage handler: aHandler
 	"Start an Operation now"
 	database newQuery
