@@ -13,6 +13,7 @@
 		"testForwardSMWithOutIMSI" : "HolgerHansPeterFreyther 11/25/2014 18:20",
 		"testIncomingDeliverSM" : "HolgerHansPeterFreyther 11/24/2014 21:10",
 		"testIncomingSubmitSM" : "HolgerHansPeterFreyther 12/2/2014 15:26",
+		"testIncomingSubmitSMWithDeliveryReceipt" : "HolgerHansPeterFreyther 12/2/2014 17:06",
 		"testMOForwardSM" : "NorbertHartl 11/4/2014 14:25",
 		"testMOForwardSMInvalidIMSI" : "NorbertHartl 11/4/2014 14:25",
 		"testMTForwardSM" : "NorbertHartl 11/4/2014 14:25",

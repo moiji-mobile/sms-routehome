@@ -13,7 +13,8 @@ sendMobileOrigantingSMS: aMessage handler: aHandler
 		smRPUI: encoded;
 		msisdnAsE164: aMessage body sourceAddressAsE164;
 		onSuccess: [:res |
-			self smppReturnSuccessOn: aHandler for: aMessage with: res];
+			self smppReturnSuccessOn: aHandler for: aMessage with: res.
+			self smppMaybeSendDeliveryReceipt: aHandler for: aMessage];
 		onFailure: [
 			self smppReturnFailureOn: aHandler for: aMessage];
 		execute.
