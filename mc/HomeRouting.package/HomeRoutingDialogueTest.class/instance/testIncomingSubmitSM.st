@@ -2,13 +2,6 @@ as yet unclassified
 testIncomingSubmitSM
 	| submitSM response mapReq |
 
-	"Add extra subscriber"
-	testHomeRouting database
-		insert: (HomeRoutingSubscriber new
-					msisdn: '9225001';
-					imsi: '98765';
-					yourself).
-
 	"Check if we receive a forwardSM.."
 	testEndPoint
 		onDialogue: [:diag |

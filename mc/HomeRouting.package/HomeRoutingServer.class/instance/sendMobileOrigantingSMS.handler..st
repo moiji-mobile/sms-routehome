@@ -1,5 +1,5 @@
 smpp
-sendMobileOrigantingSMS: aMessage handler: aHandler subscriber: aSubscriber
+sendMobileOrigantingSMS: aMessage handler: aHandler
 	| tpdu encoded |
 	tpdu := aMessage body toSubmitTPDUDictionary.
 	encoded := HomeRoutingTPDUHelper encodeSubmit: tpdu.
@@ -11,7 +11,7 @@ sendMobileOrigantingSMS: aMessage handler: aHandler subscriber: aSubscriber
 		remoteGlobalTitle: (self gtForDestination: aMessage body);
 		remoteSSN: #msc;
 		smRPUI: encoded;
-		msisdnAsE164: aSubscriber msisdn toE164;
+		msisdnAsE164: aMessage body sourceAddressAsE164;
 		onSuccess: [:res |
 			self smppReturnSuccessOn: aHandler for: aMessage with: res];
 		onFailure: [
