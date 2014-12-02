@@ -9,7 +9,8 @@
 		"smRPUI",
 		"invoke",
 		"subscriber",
-		"msisdn" ],
+		"msisdn",
+		"msisdnAsE164" ],
 	"name" : "HomeRoutingForwardSubmitSM",
 	"pools" : [
 		 ],

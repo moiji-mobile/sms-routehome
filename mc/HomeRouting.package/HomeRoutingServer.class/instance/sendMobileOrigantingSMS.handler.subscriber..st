@@ -11,7 +11,7 @@ sendMobileOrigantingSMS: aMessage handler: aHandler subscriber: aSubscriber
 		remoteGlobalTitle: (self gtForDestination: aMessage body);
 		remoteSSN: #msc;
 		smRPUI: encoded;
-		subscriber: aSubscriber;
+		msisdnAsE164: aSubscriber msisdn toE164;
 		onSuccess: [:res |
 			self smppReturnSuccessOn: aHandler for: aMessage with: res];
 		onFailure: [

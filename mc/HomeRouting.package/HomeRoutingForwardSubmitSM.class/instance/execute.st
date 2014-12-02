@@ -6,7 +6,7 @@ execute
 			at: 'serviceCentreAddressDA' put: hlr mscNumber toE164;
 			yourself);
 		at: 'sm-RP-OA' put: (ASN1Dictionary new
-			at: 'msisdn' put: subscriber msisdn toE164;
+			at: 'msisdn' put: msisdnAsE164;
 			yourself);
 		at: 'sm-RP-UI' put: smRPUI;
 		yourself.
