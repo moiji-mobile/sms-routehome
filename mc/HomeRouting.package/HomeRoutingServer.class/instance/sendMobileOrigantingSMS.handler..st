@@ -3,7 +3,7 @@ sendMobileOrigantingSMS: aMessage handler: aHandler
 	| tpdu encoded |
 	tpdu := aMessage body toSubmitTPDUDictionary.
 	encoded := HomeRoutingTPDUHelper encodeSubmit: tpdu.
-	HomeRoutingForwardSubmitSM new
+	HomeRoutingForwardSubmitSMV2 new
 		dialogueHandler: endPoint;
 		hlr: self;
 		localSSN: #msc;
