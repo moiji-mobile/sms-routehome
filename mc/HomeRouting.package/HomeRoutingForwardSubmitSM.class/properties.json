@@ -11,7 +11,7 @@
 		"subscriber",
 		"msisdn",
 		"msisdnAsE164" ],
-	"name" : "HomeRoutingForwardSubmitSMV2",
+	"name" : "HomeRoutingForwardSubmitSM",
 	"pools" : [
 		 ],
 	"super" : "HLROperationBase",

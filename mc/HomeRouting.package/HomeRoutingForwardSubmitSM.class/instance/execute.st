@@ -15,14 +15,15 @@ execute
 	dialogue
 		onPAbort: [self signalFailure];
 		onUAbort: [self signalFailure].
-		invoke := dialogue requestTcInvokeNamed: self operationName parameters:  param class: 1 timeout: 60.
+		invoke := dialogue requestTcInvokeNamed: 'forwardSM' parameters:  param class: 1 timeout: 60.
 	invoke
 		onReturn: [self signalFailure];
 		onError: [self signalFailure];
 		onReject: [self signalFailure];
 		onLCancel: [self signalFailure];
 		onReturnLast: [:res | self signalSuccess: res].
+	"Pick the shortMsgMO-RelayContext-v2 by hand."
 	dialogue
 		requestTcBeginDestinationAddress: self remoteSCCPAddress
 		originatingAddress: self localSCCPAddress
-		applicationContextName: self applicationContexOID.
+		applicationContextName: '0.4.0.0.1.0.21.2' asAsn1Oid.
