@@ -1,14 +1,17 @@
 smpp
 sendMobileOrigantingSMS: aMessage handler: aHandler
-	| tpdu encoded |
+	| tpdu encoded remoteGlobalTitle |
+	remoteGlobalTitle := self gtForDestination: aMessage.
+	remoteGlobalTitle ifNil: [^self smppReturnFailureOn: aHandler for: aMessage].
+	
 	tpdu := aMessage body toSubmitTPDUDictionary.
 	encoded := HomeRoutingTPDUHelper encodeSubmit: tpdu.
-	HomeRoutingForwardSubmitSM new
+	HomeRoutingForwardSubmitSMV2 new
 		dialogueHandler: endPoint;
 		hlr: self;
 		localSSN: #msc;
 		hlrAddress: self hlrNumber;
-		remoteGlobalTitle: (self gtForDestination: aMessage body);
+		remoteGlobalTitle: remoteGlobalTitle;
 		remoteSSN: #msc;
 		smRPUI: encoded;
 		msisdnAsE164: aMessage body sourceAddressAsE164;

@@ -1,3 +1,5 @@
 mo-routing
 gtForDestination: aDestination
-	^smscNumber
+	moSmsConfigRules do: [:each |
+		(each match: aDestination) ifTrue: [^each smscNumber]].
+	^nil

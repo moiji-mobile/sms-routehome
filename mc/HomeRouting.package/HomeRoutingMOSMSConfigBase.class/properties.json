@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Config",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HolgerHansPeterFreyther 12/8/2014 15:47",
+	"instvars" : [
+		 ],
+	"name" : "HomeRoutingMOSMSConfigBase",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

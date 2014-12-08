@@ -1,0 +1,16 @@
+{
+	"category" : "HomeRouting-Config",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"sourceMsisdnMatch",
+		"destinationMsisdnMatch",
+		"smscNumber" ],
+	"name" : "HomeRoutingMOSMSMSISDNConfig",
+	"pools" : [
+		 ],
+	"super" : "HomeRoutingMOSMSConfigBase",
+	"type" : "normal" }

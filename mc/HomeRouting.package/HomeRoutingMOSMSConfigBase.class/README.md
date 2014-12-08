@@ -1,0 +1,1 @@
+This represents SMPP -> MO SMS config base

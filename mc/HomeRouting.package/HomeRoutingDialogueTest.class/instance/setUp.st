@@ -5,7 +5,6 @@ setUp
 	testHomeRouting := HomeRoutingServer new
 			hlrNumber: '35412';
 			mscNumber: '35411';
-			smscNumber: '91143';
 			smppConnection: smppConnection;
 			yourself.
 	testHomeRouting database
@@ -13,6 +12,13 @@ setUp
 					msisdn: '1234';
 					imsi: '4321';
 					yourself).
+
+	testHomeRouting addMOSMSRule:
+		(HomeRoutingMOSMSMSISDNConfig new
+			sourceMsisdnMatch: '[0-9]*' asRegex;
+			destinationMsisdnMatch: '[0-9]*' asRegex;
+			smscNumber: '91143';
+			yourself).
 
 	testEndPoint := TCAPTestServiceEndPoint new
 		asn1Model: self asn1Model.
