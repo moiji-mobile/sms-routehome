@@ -19,6 +19,7 @@ setUp
 			destinationMsisdnMatch: '[0-9]*' asRegex;
 			smscNumber: '91143';
 			useForwardSM;
+			validityPeriod: 7 days;
 			yourself).
 
 	testEndPoint := TCAPTestServiceEndPoint new

@@ -1,6 +1,6 @@
 as yet unclassified
 testIncomingSubmitSM
-	| submitSM response mapReq |
+	| submitSM response mapReq extracted |
 
 	"Check if we receive a forwardSM.."
 	testEndPoint
@@ -16,6 +16,10 @@ testIncomingSubmitSM
 	"Assert we received a mapRequest"
 	self deny: mapReq isNil.
 	self assert: mapReq operationName equals: 'forwardSM'.
+
+	extracted := HomeRoutingTPDUHelper extractSubmitFrom: mapReq argument sm_RP_UI readStream.
+	self assert: (extracted at: 'TP-VPFI') equals: 2r10.
+	self assert: (extracted at: 'TP-VP') equals: #[173].
 
 	"We expect that we received an error for the submitSM"
 	self assert: smppConnection sent size equals: 1.

@@ -15,8 +15,5 @@ testFormatForDeliverSM
 	self assert: (deliverSM shortMessage first: 6) equals: #[5 0 3 168 2 1].
 	self assert: (deliverSM shortMessage allButFirst: 6) asString equals: 'qwertyuiop?asdfghjkl??zxcvbnmQWERTYUIOP?ASDFGHJKL??ZXCVBNM1234567890qwertyuiop?asdfghjkl??zxcvbnm1234567890QWERTYUIOP?ASDFGHJKL??ZXCVBNM1234567890qwertyu'.
 	self assert: deliverSM shortMessage size equals: 159.
-
-	"Encode just to see if there is an exception"
-	res toMessage asByteArray.
 	
 	

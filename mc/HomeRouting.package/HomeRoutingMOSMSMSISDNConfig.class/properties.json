@@ -9,7 +9,8 @@
 		"sourceMsisdnMatch",
 		"destinationMsisdnMatch",
 		"smscNumber",
-		"forwardSMOperation" ],
+		"forwardSMOperation",
+		"validityPeriod" ],
 	"name" : "HomeRoutingMOSMSMSISDNConfig",
 	"pools" : [
 		 ],

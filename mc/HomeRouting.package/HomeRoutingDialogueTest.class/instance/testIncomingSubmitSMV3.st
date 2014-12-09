@@ -1,6 +1,6 @@
 as yet unclassified
 testIncomingSubmitSMV3
-	| submitSM response mapReq |
+	| submitSM response mapReq extracted |
 
 	testHomeRouting clearMOSMSRules.
 	testHomeRouting addMOSMSRule:
@@ -25,6 +25,9 @@ testIncomingSubmitSMV3
 	"Assert we received a mapRequest"
 	self deny: mapReq isNil.
 	self assert: mapReq operationName equals: 'mo-ForwardSM'.
+	extracted := HomeRoutingTPDUHelper extractSubmitFrom: mapReq argument sm_RP_UI readStream.
+	self assert: (extracted at: 'TP-VPFI') equals: 2r0.
+	self deny: (extracted includesKey: 'TP-VP').
 
 	"We expect that we received an error for the submitSM"
 	self assert: smppConnection sent size equals: 1.
