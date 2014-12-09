@@ -8,7 +8,8 @@
 	"instvars" : [
 		"sourceMsisdnMatch",
 		"destinationMsisdnMatch",
-		"smscNumber" ],
+		"smscNumber",
+		"forwardSMOperation" ],
 	"name" : "HomeRoutingMOSMSMSISDNConfig",
 	"pools" : [
 		 ],

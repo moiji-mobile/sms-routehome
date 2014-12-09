@@ -18,6 +18,7 @@ setUp
 			sourceMsisdnMatch: '[0-9]*' asRegex;
 			destinationMsisdnMatch: '[0-9]*' asRegex;
 			smscNumber: '91143';
+			useForwardSM;
 			yourself).
 
 	testEndPoint := TCAPTestServiceEndPoint new

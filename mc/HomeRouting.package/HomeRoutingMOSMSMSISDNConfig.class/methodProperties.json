@@ -3,8 +3,10 @@
 		 },
 	"instance" : {
 		"destinationMsisdnMatch:" : "HolgerHansPeterFreyther 12/8/2014 16:37",
-		"forwardSMOperation" : "HolgerHansPeterFreyther 12/8/2014 16:53",
+		"forwardSMOperation" : "HolgerHansPeterFreyther 12/9/2014 15:15",
 		"match:" : "HolgerHansPeterFreyther 12/8/2014 16:03",
 		"smscNumber" : "HolgerHansPeterFreyther 12/8/2014 16:43",
 		"smscNumber:" : "HolgerHansPeterFreyther 12/8/2014 16:37",
-		"sourceMsisdnMatch:" : "HolgerHansPeterFreyther 12/8/2014 16:36" } }
+		"sourceMsisdnMatch:" : "HolgerHansPeterFreyther 12/8/2014 16:36",
+		"useForwardSM" : "HolgerHansPeterFreyther 12/9/2014 15:15",
+		"useMOForwardSM" : "HolgerHansPeterFreyther 12/9/2014 15:19" } }
