@@ -30,6 +30,9 @@ extractSubmitFrom: stream
 	"Read TP-PID/TP-DCS"
 	res at: 'TP-PID' put: stream next.
 	res at: 'TP-DCS' put: stream next.
+
+	(res at: 'TP-VPFI') = 2 ifTrue: [
+		res at: 'TP-VP' put: (stream next: 1)].
 	
 	len := stream next.
 	res at: 'TP-UD-Len' put: len.

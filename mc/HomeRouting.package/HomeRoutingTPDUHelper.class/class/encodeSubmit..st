@@ -25,6 +25,7 @@ encodeSubmit: tpdu
 		putByteArray: da;
 		putByte: (tpdu at: 'TP-PID');
 		putByte: (tpdu at: 'TP-DCS');
+		putByteArray: ((tpdu at: 'TP-VPFI') > 0 ifTrue: [(tpdu at: 'TP-VP')] ifFalse: [ #[] ]);
 		putByte: (tpdu at: 'TP-UD-Len');
 		putByteArray: data contents;
 		toByteArray.
