@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Config",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "HomeRoutingMTSMSConfigBase",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

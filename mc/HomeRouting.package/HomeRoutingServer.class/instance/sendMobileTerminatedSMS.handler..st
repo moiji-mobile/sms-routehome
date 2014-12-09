@@ -1,7 +1,10 @@
 smpp
 sendMobileTerminatedSMS: aMessage handler: aHandler
-	| tpdu encoded |
+	| tpdu encoded rule |
 	tpdu := aMessage body toDeliverTPDUDictionary.
+	rule := self ruleForMTSMS: aMessage.
+	rule ifNil: [
+		^self smppReturnFailureOn: aHandler for: aMessage].
 	encoded := HomeRoutingTPDUHelper encodeDeliver: tpdu.
 	HomeRoutingForwardDeliverSM new
 		dialogueHandler: endPoint;
@@ -9,7 +12,8 @@ sendMobileTerminatedSMS: aMessage handler: aHandler
 		hlrAddress: self hlrNumber;
 		localSSN: #msc;
 		msisdnE164: aMessage body destinationAddressAsE164;
-		gtTranslation: (self gtTranslationForDestination: aMessage body);
+		sendRoutingInfoTranslationType: rule sendRoutingInfoTranslationType;
+		forwardSMTranslationType: rule forwardSMTranslationType;
 		remoteSSN: #hlr;
 		smRPUI: encoded;
 		onSuccess: [:res |

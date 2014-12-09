@@ -6,6 +6,6 @@ remoteSCCPAddressForSRIForSM
 								nature: SCCPGlobalTitle naiInternationalNumber;
 								plan: SCCPGlobalTitle npISDN;
 								addr: msisdnE164 fromE164;
-								translation: gtTranslation;
+								translation: sendRoutingInfoTranslationType;
 								yourself);
 			yourself

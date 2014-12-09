@@ -3,10 +3,11 @@
 		 },
 	"instance" : {
 		"execute" : "HolgerHansPeterFreyther 11/26/2014 14:22",
-		"gtTranslation:" : "HolgerHansPeterFreyther 11/25/2014 23:26",
+		"forwardSMTranslationType:" : "HolgerHansPeterFreyther 12/9/2014 18:50",
 		"handleSRIForSMResult:" : "HolgerHansPeterFreyther 11/26/2014 11:28",
 		"initialize" : "HolgerHansPeterFreyther 11/25/2014 23:24",
 		"msisdnE164:" : "HolgerHansPeterFreyther 11/24/2014 15:49",
-		"remoteSCCPAddressForForward:" : "HolgerHansPeterFreyther 11/25/2014 23:24",
-		"remoteSCCPAddressForSRIForSM" : "HolgerHansPeterFreyther 11/25/2014 23:24",
+		"remoteSCCPAddressForForward:" : "HolgerHansPeterFreyther 12/9/2014 18:51",
+		"remoteSCCPAddressForSRIForSM" : "HolgerHansPeterFreyther 12/9/2014 18:51",
+		"sendRoutingInfoTranslationType:" : "HolgerHansPeterFreyther 12/9/2014 18:50",
 		"smRPUI:" : "HolgerHansPeterFreyther 11/24/2014 15:25" } }

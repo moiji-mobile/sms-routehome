@@ -9,7 +9,8 @@
 		"mscNumber",
 		"smppConnection",
 		"smppConnectionManager",
-		"moSmsConfigRules" ],
+		"moSmsConfigRules",
+		"mtSmsConfigRules" ],
 	"name" : "HomeRoutingServer",
 	"pools" : [
 		 ],

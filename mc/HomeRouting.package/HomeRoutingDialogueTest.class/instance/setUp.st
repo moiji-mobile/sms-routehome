@@ -21,6 +21,13 @@ setUp
 			useForwardSM;
 			validityPeriod: 7 days;
 			yourself).
+	testHomeRouting addMTSMSRule:
+		(HomeRoutingMTSMSMSISDNConfig new
+			sourceMsisdnMatch: '[0-9]*' asRegex;
+			destinationMsisdnMatch: '[0-9]*' asRegex;
+			sendRoutingInfoTranslationType: 2;
+			forwardSMTranslationType: 2;
+			yourself).
 
 	testEndPoint := TCAPTestServiceEndPoint new
 		asn1Model: self asn1Model.

@@ -1,0 +1,11 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"destinationMsisdnMatch:" : "HolgerHansPeterFreyther 12/9/2014 18:43",
+		"forwardSMTranslationType" : "HolgerHansPeterFreyther 12/9/2014 18:50",
+		"forwardSMTranslationType:" : "HolgerHansPeterFreyther 12/9/2014 18:44",
+		"match:" : "HolgerHansPeterFreyther 12/9/2014 18:49",
+		"sendRoutingInfoTranslationType" : "HolgerHansPeterFreyther 12/9/2014 18:49",
+		"sendRoutingInfoTranslationType:" : "HolgerHansPeterFreyther 12/9/2014 18:43",
+		"sourceMsisdnMatch:" : "HolgerHansPeterFreyther 12/9/2014 18:43" } }

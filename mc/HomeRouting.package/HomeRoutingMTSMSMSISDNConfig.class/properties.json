@@ -1,17 +1,17 @@
 {
-	"category" : "HomeRouting-Operations",
+	"category" : "HomeRouting-Config",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"smRPUI",
-		"msisdnE164",
+		"sourceMsisdnMatch",
+		"destinationMsisdnMatch",
 		"sendRoutingInfoTranslationType",
 		"forwardSMTranslationType" ],
-	"name" : "HomeRoutingForwardDeliverSM",
+	"name" : "HomeRoutingMTSMSMSISDNConfig",
 	"pools" : [
 		 ],
-	"super" : "HLROperationBase",
+	"super" : "HomeRoutingMTSMSConfigBase",
 	"type" : "normal" }
