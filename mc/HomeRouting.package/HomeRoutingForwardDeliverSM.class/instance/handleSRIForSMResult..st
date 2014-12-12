@@ -1,8 +1,8 @@
 as yet unclassified
 handleSRIForSMResult: aResult
 	| imsi mscNumber param invoke |
-	imsi := aResult decodedResult imsi.
-	mscNumber := aResult decodedResult locationInfoWithLMSI networkNode_Number fromE164.
+	imsi := aResult resultObject imsi.
+	mscNumber := aResult resultObject locationInfoWithLMSI networkNode_Number fromE164.
 
 
 	param := ASN1Dictionary new
