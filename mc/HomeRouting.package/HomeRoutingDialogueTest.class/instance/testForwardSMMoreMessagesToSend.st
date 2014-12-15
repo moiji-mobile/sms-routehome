@@ -10,7 +10,7 @@ testForwardSMMoreMessagesToSend
 					at: 'serviceCentreAddressOA' put: (ByteArray readHexFrom: '912343');
 					yourself);
 				at: 'sm-RP-UI' put: (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e');
-				at: 'moreMessagesToSend' put: 1;
+				at: 'moreMessagesToSend' put: nil asAsn1Value;
 				yourself.
 
 	operationName := 'forwardSM'.
