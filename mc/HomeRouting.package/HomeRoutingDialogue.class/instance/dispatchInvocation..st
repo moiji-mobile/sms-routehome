@@ -15,6 +15,6 @@ dispatchInvocation: anInvocation
 		ifFalse: [
 			
 			self logError: ('ID(<1p>) HomeRoutingDialogue not handler for: <2s>' expandMacrosWith: self id with:  selector) area: #home.
-			^self requestTcUAbort: TCAPDialogueUAbort serviceUser ].
+			^self requestTcUAbort: self newUAbort serviceUser ].
 
 	self perform: anInvocation normalizedOperationName with: anInvocation.

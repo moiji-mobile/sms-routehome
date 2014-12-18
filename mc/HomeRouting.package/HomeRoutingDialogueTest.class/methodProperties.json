@@ -20,6 +20,7 @@
 		"testMOForwardSM" : "NorbertHartl 11/4/2014 14:25",
 		"testMOForwardSMInvalidIMSI" : "NorbertHartl 11/4/2014 14:25",
 		"testMTForwardSM" : "NorbertHartl 11/4/2014 14:25",
+		"testNonSMSOperation" : "HolgerHansPeterFreyther 12/18/2014 20:47",
 		"testReportSMDeliveryStatusV2" : "NorbertHartl 11/4/2014 14:25",
 		"testReportSMDeliveryStatusV2NoOutcome" : "NorbertHartl 11/4/2014 14:25",
 		"testReportSMDeliveryStatusV3" : "NorbertHartl 11/4/2014 14:25",
