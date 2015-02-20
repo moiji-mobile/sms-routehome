@@ -25,6 +25,7 @@ testIncomingSubmitSMV3
 	"Assert we received a mapRequest"
 	self deny: mapReq isNil.
 	self assert: mapReq operationName equals: 'mo-ForwardSM'.
+	self assert: mapReq argument sm_RP_DA serviceCentreAddressDA fromE164 equals: '91143'.
 	extracted := HomeRoutingTPDUHelper extractSubmitFrom: mapReq argument sm_RP_UI readStream.
 	self assert: (extracted at: 'TP-VPFI') equals: 2r0.
 	self deny: (extracted includesKey: 'TP-VP').

@@ -3,7 +3,7 @@ execute
 	| param |
 	param := ASN1Dictionary new
 		at: 'sm-RP-DA' put: (ASN1Dictionary new
-			at: 'serviceCentreAddressDA' put: hlr mscNumber toE164;
+			at: 'serviceCentreAddressDA' put: remoteGlobalTitle toE164;
 			yourself);
 		at: 'sm-RP-OA' put: (ASN1Dictionary new
 			at: 'msisdn' put: msisdnAsE164;
