@@ -4,7 +4,7 @@ testMOForwardSMInvalidIMSI
 
 	sriArg := ASN1Dictionary new
 				at: 'sm-RP-DA' put: (ASN1Dictionary new
-					at: 'imsi' put: '43215' toTBCD;
+					at: 'imsi' put: '943215' toTBCD;
 					yourself);
 				at: 'sm-RP-OA' put: (ASN1Dictionary new
 					at: 'serviceCentreAddressOA' put: '912343';

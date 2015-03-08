@@ -6,7 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"homeRoutingServer" ],
+		"homeRoutingServer",
+		"imsiPrefix",
+		"msisdnPrefix" ],
 	"name" : "HomeRoutingSubscriberDatabase",
 	"pools" : [
 		 ],

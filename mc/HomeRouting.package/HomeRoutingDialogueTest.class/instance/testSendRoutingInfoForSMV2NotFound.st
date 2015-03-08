@@ -3,7 +3,7 @@ testSendRoutingInfoForSMV2NotFound
 	| operationName dialogue  invoke lastError sriArg |
 	
 	sriArg := ASN1Dictionary new
-				at: 'msisdn' put: '12345' toE164;
+				at: 'msisdn' put: '912345' toE164;
 				at: 'sm-RP-PRI' put: false;
 				at: 'serviceCentreAddress' put: '912343';
 				yourself.

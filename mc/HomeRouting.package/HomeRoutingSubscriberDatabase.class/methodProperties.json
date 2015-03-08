@@ -2,7 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
-		"findImsi:" : "HolgerHansPeterFreyther 9/22/2014 15:07",
-		"findMSISDN:" : "HolgerHansPeterFreyther 9/22/2014 15:07",
+		"findImsi:" : "HolgerHansPeterFreyther 3/8/2015 13:55",
+		"findMSISDN:" : "HolgerHansPeterFreyther 3/8/2015 13:57",
 		"homeRoutingServer:" : "HolgerHansPeterFreyther 9/22/2014 15:06",
-		"modifySubscriber:" : "HolgerHansPeterFreyther 9/22/2014 15:12" } }
+		"imsiPrefix:" : "HolgerHansPeterFreyther 3/8/2015 13:29",
+		"insert:" : "HolgerHansPeterFreyther 3/8/2015 13:17",
+		"mapIMSI:" : "HolgerHansPeterFreyther 3/8/2015 13:45",
+		"mapMSISDN:" : "HolgerHansPeterFreyther 3/8/2015 13:47",
+		"modifySubscriber:" : "HolgerHansPeterFreyther 3/8/2015 13:56",
+		"msisdnPrefix:" : "HolgerHansPeterFreyther 3/8/2015 13:29" } }

@@ -24,4 +24,4 @@ testSendRoutingInfoForSMV2
 		applicationContextName: (self applicationContextFor: operationName).
 
 	"TODO.. make sure things return"
-	self assert: invokeResultMessage resultObject imsi = '4321' toTBCD.
+	self assert: invokeResultMessage resultObject imsi = '4334' toTBCD.

@@ -1,0 +1,9 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"setUp" : "HolgerHansPeterFreyther 3/8/2015 14:07",
+		"testFindImsi" : "HolgerHansPeterFreyther 3/8/2015 14:06",
+		"testFindMSISDN" : "HolgerHansPeterFreyther 3/8/2015 14:08",
+		"testMapIMSI" : "HolgerHansPeterFreyther 3/8/2015 13:48",
+		"testMapMSISDN" : "HolgerHansPeterFreyther 3/8/2015 13:48" } }

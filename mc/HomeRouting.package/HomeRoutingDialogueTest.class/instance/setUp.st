@@ -7,11 +7,10 @@ setUp
 			mscNumber: '35411';
 			smppConnection: smppConnection;
 			yourself.
+
 	testHomeRouting database
-		insert: (HomeRoutingSubscriber new
-					msisdn: '1234';
-					imsi: '4321';
-					yourself).
+		imsiPrefix: '43';
+		msisdnPrefix: '12'.
 
 	testHomeRouting addMOSMSRule:
 		(HomeRoutingMOSMSMSISDNConfig new

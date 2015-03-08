@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"database" ],
+	"name" : "HomeRoutingSubscriberDatabaseTest",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }
