@@ -7,5 +7,5 @@ smppReturnSuccessOn: aHandler for: incomingMessage with: aResult
 						commandStatus: 0;
 						sequenceNumber: incomingMessage header sequenceNumber;
 						yourself);
-					body: (SMPPSubmitSMResponse new messageId: '0'; yourself).
+					body: incomingMessage body responseSuccessBody.
 	aHandler sendDirect: response toMessage asByteArray.

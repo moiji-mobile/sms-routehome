@@ -40,4 +40,4 @@ testIncomingDeliverSM
 	self assert: response body class equals: SMPPDeliverSMResponse.
 	self assert: response header sequenceNumber equals: deliverSM header sequenceNumber.
 	self assert: response header commandStatus equals: 0.
-	self assert: response body messageId equals: '0'.
+	self assert: response body messageId equals: ''.
