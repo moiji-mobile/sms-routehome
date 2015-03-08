@@ -33,3 +33,5 @@ testMTForwardSM
 	
 
 	self assert: invokeResultMessage result isNil.
+	self assert: smppConnection scheduledCommands size equals: 1.
+	self assert: smppConnection scheduledCommands first body class equals: SMPPDeliverSM.

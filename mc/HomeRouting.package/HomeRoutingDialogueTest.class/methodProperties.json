@@ -19,7 +19,7 @@
 		"testIncomingSubmitSMWithDeliveryReceipt" : "HolgerHansPeterFreyther 12/2/2014 17:06",
 		"testMOForwardSM" : "NorbertHartl 11/4/2014 14:25",
 		"testMOForwardSMInvalidIMSI" : "HolgerHansPeterFreyther 3/8/2015 14:05",
-		"testMTForwardSM" : "NorbertHartl 11/4/2014 14:25",
+		"testMTForwardSM" : "HolgerHansPeterFreyther 3/8/2015 15:03",
 		"testNonSMSOperation" : "HolgerHansPeterFreyther 12/18/2014 20:47",
 		"testReportSMDeliveryStatusV2" : "NorbertHartl 11/4/2014 14:25",
 		"testReportSMDeliveryStatusV2NoOutcome" : "NorbertHartl 11/4/2014 14:25",
