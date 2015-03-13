@@ -1,0 +1,15 @@
+{
+	"category" : "HomeRouting-Config",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HolgerHansPeterFreyther 3/13/2015 17:03",
+	"instvars" : [
+		"imsiPrefix",
+		"msisdnPrefix" ],
+	"name" : "HomeRoutingPrefixPair",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

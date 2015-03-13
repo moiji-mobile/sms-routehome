@@ -9,8 +9,10 @@ setUp
 			yourself.
 
 	testHomeRouting database
-		imsiPrefix: '43';
-		msisdnPrefix: '12'.
+		addPair: (HomeRoutingPrefixPair new
+					imsiPrefix: '43';
+					msisdnPrefix: '12';
+					yourself).
 
 	testHomeRouting addMOSMSRule:
 		(HomeRoutingMOSMSMSISDNConfig new

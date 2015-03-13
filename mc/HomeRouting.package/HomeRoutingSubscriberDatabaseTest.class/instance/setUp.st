@@ -3,5 +3,7 @@ setUp
 	| homeRoutingServer |
 	homeRoutingServer := HomeRoutingServer new.
 	database := homeRoutingServer database.
-	database imsiPrefix: '456'.
-	database msisdnPrefix: '1235'.
+	database addPair: (HomeRoutingPrefixPair new
+					imsiPrefix: '456';
+					msisdnPrefix: '1235';
+					yourself).

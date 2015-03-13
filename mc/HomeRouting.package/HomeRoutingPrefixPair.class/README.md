@@ -1,0 +1,1 @@
+I represent a pair of IMSI/MSISDN prefixes and I am used by the database for the replacement.
