@@ -22,6 +22,7 @@ smppMaybeSendDeliveryReceipt: aHandler for: aMessage
 		defaultMessageID: 0;
 		dataCoding: 0;
 		shortMessage: (aMessage body deliveryReceiptString: DateAndTime now) asByteArray;
+		userMessageReference: (aMessage body userMessageReference);
 		yourself.
 
 	"We don't care about the result. Just send it."
