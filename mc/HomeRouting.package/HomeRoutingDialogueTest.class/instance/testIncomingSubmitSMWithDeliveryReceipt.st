@@ -31,3 +31,5 @@ testIncomingSubmitSMWithDeliveryReceipt
 	self assert: deliverSM body class equals: SMPPDeliverSM.
 	self assert: deliverSM body esmClass equals: 16r04.
 	self assert: deliverSM body userMessageReference equals: #[0 9].
+	self assert: deliverSM body messageState equals: #[2].
+	self assert: deliverSM body receiptedMessageId equals: #[0].
