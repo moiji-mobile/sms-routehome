@@ -20,7 +20,7 @@ sendMobileOrigantingSMS: aMessage handler: aHandler
 		remoteGlobalTitle: rule smscNumber;
 		remoteSSN: #msc;
 		smRPUI: encoded;
-		msisdnAsE164: aMessage body sourceAddressAsE164;
+		msisdnAsE164: aMessage body sourceAddressAsGSM;
 		onSuccess: [:res |
 			self smppReturnSuccessOn: aHandler for: aMessage with: res.
 			self smppMaybeSendDeliveryReceipt: aHandler for: aMessage];

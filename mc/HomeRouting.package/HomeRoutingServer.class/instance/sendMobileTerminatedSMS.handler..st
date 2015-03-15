@@ -11,7 +11,7 @@ sendMobileTerminatedSMS: aMessage handler: aHandler
 		hlr: self;
 		hlrAddress: self hlrNumber;
 		localSSN: #msc;
-		msisdnE164: aMessage body destinationAddressAsE164;
+		msisdnE164: aMessage body destinationAddressAsGSM;
 		sendRoutingInfoTranslationType: rule sendRoutingInfoTranslationType;
 		forwardSMTranslationType: rule forwardSMTranslationType;
 		remoteSSN: #hlr;
