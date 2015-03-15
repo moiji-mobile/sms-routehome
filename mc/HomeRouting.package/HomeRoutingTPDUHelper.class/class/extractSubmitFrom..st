@@ -1,6 +1,6 @@
 as yet unclassified
 extractSubmitFrom: stream
-	| byte res data udhi len ton_npi |
+	| byte res data udhi len addr |
 
 	res := Dictionary new.
 	byte := stream next.
@@ -17,15 +17,11 @@ extractSubmitFrom: stream
 	res at: 'TP-MR' put: stream next.
 
 	"Read the address and assume it is TBCD"
-	len := stream next.
-	ton_npi := stream next.
-	res at: 'ton' put: ((ton_npi bitShift: -4) bitAnd: 2r111).
-	res at: 'npi' put: (ton_npi bitAnd: 2r1111).
-	len := ((len + 1) / 2) asInteger.
-	data := stream next: len.
-	data size = len
-		ifFalse: [^self error: 'Short Read on Pharo'].
-	res at: 'TP-DA' put: (GSMNumberDigits decodeFrom: data).
+	addr := GSMAddressCoding decodeSMSAddress: stream.
+	res
+		at: 'ton' put: addr typeOfNumber;
+		at: 'npi' put: addr numberingPlan;
+		at: 'TP-DA' put: addr address.
 
 	"Read TP-PID/TP-DCS"
 	res at: 'TP-PID' put: stream next.
