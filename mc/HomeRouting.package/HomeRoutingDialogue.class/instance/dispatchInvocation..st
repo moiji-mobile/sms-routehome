@@ -2,6 +2,8 @@ dispatch
 dispatchInvocation: anInvocation
 	| selector |
 	selector := anInvocation normalizedOperationName.
+	self
+		logDebug: ('ID(<1p>) dispatchInvocation invoke(<2p>)' expandMacrosWith: self id with:  selector) area: #home.
 
 	"The HLR may handle this. This means the normalizedOperatorName
 	will be created twice right now."

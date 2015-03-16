@@ -4,6 +4,8 @@ smppMaybeSendDeliveryReceipt: aHandler for: aMessage
 	"Do we need to send a delivery report?"
 	(aMessage body registeredDelivery = 1) ifFalse: [^self].
 
+	self
+		logDebug: ('Server(<1p>) sending delivery receipt' expandMacrosWith: mscNumber) area: #home.
 	deliverSM := SMPPDeliverSM new
 		serviceType: '';
 		sourceTypeOfNumber: aMessage body destinationTypeOfNumber;

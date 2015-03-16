@@ -1,9 +1,14 @@
 smpp
 sendMobileTerminatedSMS: aMessage handler: aHandler
 	| tpdu encoded rule |
+	self
+		logDebug: ('Server(<1p>) send MT-SMS from systemId(<2p>)' expandMacrosWith: mscNumber with: aHandler systemId) area: #home.
+
 	tpdu := aMessage body toDeliverTPDUDictionary.
 	rule := self ruleForMTSMS: aMessage.
 	rule ifNil: [
+		self
+			logNotice: ('Server(<1p>) No MO-SMS rule found' expandMacrosWith: mscNumber) area: #home.
 		^self smppReturnFailureOn: aHandler for: aMessage].
 	encoded := HomeRoutingTPDUHelper encodeDeliver: tpdu.
 	HomeRoutingForwardDeliverSM new

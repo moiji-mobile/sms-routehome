@@ -1,8 +1,13 @@
 smpp
 sendMobileOrigantingSMS: aMessage handler: aHandler
 	| tpdu encoded rule vp |
+	self
+		logDebug: ('Server(<1p>) send MO-SMS from systemId(<2p>)' expandMacrosWith: mscNumber with: aHandler systemId) area: #home.
 	rule := self ruleForMOSMS: aMessage.
-	rule ifNil: [^self smppReturnFailureOn: aHandler for: aMessage].
+	rule ifNil: [
+		self
+			logNotice: ('Server(<1p>) No MO-SMS rule found' expandMacrosWith: mscNumber) area: #home.
+		^self smppReturnFailureOn: aHandler for: aMessage].
 	
 	tpdu := aMessage body toSubmitTPDUDictionary.
 	vp := rule validityPeriod.
