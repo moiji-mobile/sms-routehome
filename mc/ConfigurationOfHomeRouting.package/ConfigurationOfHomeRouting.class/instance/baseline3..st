@@ -19,7 +19,7 @@ baseline3: spec
 			project: 'ASN1' with: [
 				spec
 					className: #ConfigurationOfASN1;
-					versionString: '0.8.26';
+					versionString: '0.8.33';
 					repository: 'http://smalltalkhub.com/mc/NorbertHartl/ASN1/main' ];
 			project: 'Osmocom' with: [
 				spec
