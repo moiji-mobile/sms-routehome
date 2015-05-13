@@ -4,7 +4,7 @@ baseline4: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main'.
+		spec repository: 'http://smalltalkhub.com/mc/osmocom/HomeRouting/main'.
 		spec 
 			project: 'Phexample' with: [
 				spec
