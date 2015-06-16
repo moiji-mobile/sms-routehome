@@ -4,7 +4,7 @@ baseline1: spec
         
 	spec for: #common do: [
 		spec blessing: #baseline.
-                spec repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main'.    
+                spec repository: 'http://smalltalkhub.com/mc/osmocom/HomeRouting/main'.    
                 spec 
 				package: 'HomeRouting' with: [ spec requires: #('TCAP' 'ASN1' 'SMPP-Codec' 'SMPP-Connection') ].
 
@@ -21,7 +21,7 @@ baseline1: spec
 						className: 'ConfigurationOfTCAP';
 						versionString: #'bleedingEdge';
 						file: 'ConfigurationOfTCAP';
-						repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main' ].
+						repository: 'http://smalltalkhub.com/mc/osmocom/TCAP/main' ].
 
 			spec
 				project: 'ASN1' with: [
@@ -30,16 +30,9 @@ baseline1: spec
 						versionString: #development;
 						file: 'ConfigurationOfASN1';
 						repository: 'http://smalltalkhub.com/mc/NorbertHartl/ASN1/main' ].
-			spec
-				project: 'Osmocom' with: [
-					spec
-						className: 'ConfigurationOfOsmocom';
-						versionString: #'bleedingEdge';
-						file: 'ConfigurationOfOsmocom';
-						repository: 'http://smalltalkhub.com/mc/osmocom/Osmocom/main' ].
 
                 spec
-				package: 'SMPP-Codec' with: [ spec requires: #('Osmocom') ];
+				package: 'SMPP-Codec' with: [ spec requires: #() ];
 				package: 'SMPP-Connection' with: [ spec requires: #('SMPP-Codec') ].
                 spec
 				group: 'default' with: #('HomeRouting') ].
