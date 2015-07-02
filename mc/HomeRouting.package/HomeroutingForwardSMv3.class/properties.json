@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Operations",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "HomeroutingForwardSMv3",
+	"pools" : [
+		 ],
+	"super" : "HomeroutingForwardSM",
+	"type" : "normal" }

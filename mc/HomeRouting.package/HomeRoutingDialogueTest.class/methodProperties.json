@@ -20,6 +20,7 @@
 		"testIncomingSubmitSMWithDeliveryReceipt" : "HolgerHansPeterFreyther 3/13/2015 22:54",
 		"testMOForwardSMRejected" : "HolgerHansPeterFreyther 7/2/2015 16:52",
 		"testMTForwardSM" : "HolgerHansPeterFreyther 3/8/2015 15:03",
+		"testMTForwardSMNoConnection" : "HolgerHansPeterFreyther 7/2/2015 16:31",
 		"testNonSMSOperation" : "HolgerHansPeterFreyther 12/18/2014 20:47",
 		"testReportSMDeliveryStatusV2" : "NorbertHartl 11/4/2014 14:25",
 		"testReportSMDeliveryStatusV2NoOutcome" : "NorbertHartl 11/4/2014 14:25",
@@ -27,6 +28,6 @@
 		"testReportSMDeliveryStatusV3NoOutcome" : "NorbertHartl 11/4/2014 14:25",
 		"testSendRoutingInfoForSMV2" : "HolgerHansPeterFreyther 3/8/2015 13:59",
 		"testSendRoutingInfoForSMV2NotFound" : "HolgerHansPeterFreyther 3/8/2015 13:59",
-		"testSendRoutingInfoForSMV2Unrechable" : "NorbertHartl 11/4/2014 14:25",
+		"testSendRoutingInfoForSMV2Unrechable" : "HolgerHansPeterFreyther 7/2/2015 12:07",
 		"testSendRoutingInfoForSMV3" : "HolgerHansPeterFreyther 3/8/2015 13:59",
-		"testSendRoutingInfoForSMV3Unreachable" : "NorbertHartl 11/4/2014 14:25" } }
+		"testSendRoutingInfoForSMV3Unreachable" : "HolgerHansPeterFreyther 7/2/2015 12:08" } }

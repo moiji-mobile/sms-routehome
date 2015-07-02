@@ -1,6 +1,6 @@
 as yet unclassified
 testSendRoutingInfoForSMV2Unrechable
-	| operationName dialogue  invoke lastError sriArg |
+	| operationName dialogue  invoke lastResult sriArg |
 
 	smppConnection setUnreachable.
 	
@@ -15,15 +15,17 @@ testSendRoutingInfoForSMV2Unrechable
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
 				class: TCAPReportSuccessAndFailure  timeout: 500.
+	dialogue
+		onInvoke: [:inv | inv halt  ].
 	invoke
 		onReturn: [self assert: false ];
-		onError: [:err | lastError := err];
+		onError: [self assert: false];
 		onReject: [self assert: false];
-		onReturnLast: [self assert: false].
+		onReturnLast: [:res | lastResult := res].
 	dialogue
 		requestTcBeginDestinationAddress: self hlrAddr
 		originatingAddress: self localAddr
 		applicationContextName: (self applicationContextFor: operationName).
 
-	"TODO.. make sure things return"
-	self assert: lastError name equals: 'absentSubscriberV2'.
+	self deny: lastResult isNil.
+	self assert: lastResult resultObject imsi fromTBCD equals: '4334'.

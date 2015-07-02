@@ -9,7 +9,7 @@ forwardSM
 	selectedSMPPConnection ifNil: [
 		self logError: ('ID(<1p>) No SMPPConnection. returning with sm-DeliveryFailure'
 						expandMacrosWith: dialogue id) area: #home.
-		invocation returnError: 'sm-DeliveryFailure' with: nil.
+		invocation returnError: self class absentSubscriber with: self class absentSubscriberData.
 		^dialogue requestTcEnd: false.
 	].
 

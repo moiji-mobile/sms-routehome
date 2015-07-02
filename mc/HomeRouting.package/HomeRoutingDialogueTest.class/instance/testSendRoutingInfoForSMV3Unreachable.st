@@ -1,6 +1,6 @@
 as yet unclassified
 testSendRoutingInfoForSMV3Unreachable
-	| operationName dialogue  invoke lastError sriArg |
+	| operationName dialogue  invoke lastResult sriArg |
 
 	smppConnection setUnreachable.
 
@@ -21,13 +21,14 @@ testSendRoutingInfoForSMV3Unreachable
 				class: 1 timeout: 500.
 	invoke
 		onReturn: [self assert: false ];
-		onError: [:err | lastError := err];
+		onError: [self assert: false];
 		onReject: [self assert: false];
-		onReturnLast: [self assert: false].
+		onReturnLast: [:res | lastResult := res].
 	dialogue
 		requestTcBeginDestinationAddress: self hlrAddr
 		originatingAddress: self localAddr
 		applicationContextName: (self applicationContextFor: operationName).
 	
 
-	self assert: lastError name equals: 'absentSubscriberSM'.
+	self deny: lastResult isNil.
+	self assert: lastResult resultObject imsi fromTBCD equals: '4334'.

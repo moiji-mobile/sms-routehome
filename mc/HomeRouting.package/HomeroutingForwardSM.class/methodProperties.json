@@ -1,12 +1,13 @@
 {
 	"class" : {
-		 },
+		"absentSubscriber" : "HolgerHansPeterFreyther 7/2/2015 16:24",
+		"absentSubscriberData" : "HolgerHansPeterFreyther 7/2/2015 16:24" },
 	"instance" : {
 		"continueOrEnd" : "HolgerHansPeterFreyther 11/25/2014 11:56",
 		"createDeliverSMFor:" : "HolgerHansPeterFreyther 11/13/2014 09:40",
 		"formatForDeliverSM:on:" : "HolgerHansPeterFreyther 11/16/2014 21:39",
-		"forwardSM" : "HolgerHansPeterFreyther 9/22/2014 20:43",
+		"forwardSM" : "HolgerHansPeterFreyther 7/2/2015 16:29",
 		"reportUnhandled:" : "HolgerHansPeterFreyther 9/22/2014 18:54",
 		"smppError" : "HolgerHansPeterFreyther 9/22/2014 20:43",
 		"smppResult" : "HolgerHansPeterFreyther 9/22/2014 20:39",
-		"smppTimeout" : "HolgerHansPeterFreyther 9/22/2014 20:44" } }
+		"smppTimeout" : "HolgerHansPeterFreyther 7/2/2015 16:29" } }
