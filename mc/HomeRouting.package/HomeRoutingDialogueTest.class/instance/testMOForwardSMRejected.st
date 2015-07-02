@@ -1,6 +1,7 @@
 as yet unclassified
-testMOForwardSM
-	| operationName dialogue  invoke invokeResultMessage sriArg |
+testMOForwardSMRejected
+	| operationName dialogue  invoke sriArg wasAborted |
+	
 
 	sriArg := ASN1Dictionary new
 				at: 'sm-RP-DA' put: (ASN1Dictionary new
@@ -13,10 +14,11 @@ testMOForwardSM
 				yourself.
 
 	operationName := 'mo-ForwardSM'.
+	wasAborted := true.
 	dialogue := testEndPoint newDialogue.
 	dialogue
 		onPAbort: [:msg | self assert: false];
-		onUAbort: [:msg | self assert: false].
+		onUAbort: [:msg | wasAborted := true].
 
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
@@ -25,11 +27,11 @@ testMOForwardSM
 		onReturn: [self assert: false ];
 		onError: [self assert: false];
 		onReject: [self assert: false];
-		onReturnLast: [:result | invokeResultMessage := result ].
+		onReturnLast: [self assert: false].
 	dialogue
 		requestTcBeginDestinationAddress: self hlrAddr
 		originatingAddress: self localAddr
 		applicationContextName: (self applicationContextFor: operationName).
 	
 
-	self assert: invokeResultMessage result isNil.
+	self assert: wasAborted
