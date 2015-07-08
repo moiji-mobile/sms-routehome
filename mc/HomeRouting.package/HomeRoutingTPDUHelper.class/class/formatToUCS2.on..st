@@ -15,9 +15,7 @@ formatToUCS2: tpdu on: smppMessage
 		tmp := input next: len.
 		tmp size = len ifFalse: [
 			^self error: 'Short read on UDH'].
-		udh putByteArray: tmp.
-		data putByte: len.
-		data putByteArray: udh].
+		udh putByteArray: tmp].
 
 	data putByteArray: input upToEnd asByteArray.
 

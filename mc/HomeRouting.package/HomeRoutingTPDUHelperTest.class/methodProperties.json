@@ -14,4 +14,5 @@
 		"testRoundtripExtractSubmit" : "HolgerHansPeterFreyther 12/9/2014 16:28",
 		"testRoundtripUDH" : "HolgerHansPeterFreyther 11/17/2014 15:42",
 		"testSMPPUDH7BitExtract" : "HolgerHansPeterFreyther 7/8/2015 17:00",
-		"testSMPPUDHUCS2Extract" : "HolgerHansPeterFreyther 7/7/2015 17:36" } }
+		"testSMPPUDHUCS2Extract" : "HolgerHansPeterFreyther 7/8/2015 17:23",
+		"testSMPPUDHUCS2SMSEncode" : "HolgerHansPeterFreyther 7/8/2015 17:23" } }
