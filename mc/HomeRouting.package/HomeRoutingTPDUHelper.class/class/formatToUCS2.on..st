@@ -22,5 +22,5 @@ formatToUCS2: tpdu on: smppMessage
 	"Set the data"
 	tpdu at: 'TP-UDHI' put: udhi.
 	tpdu at: 'TP-UDH' put: udh toByteArray.
-	tpdu at: 'TP-UD-Len' put: data size.
+	tpdu at: 'TP-UD-Len' put: smppMessage shortMessage size. "Includes UDH+data"
 	tpdu at: 'TP-UD' put: data toByteArray

@@ -5,7 +5,7 @@ testSMPPUDHUCS2SMSEncode
 
 	extracted := smpp body toSubmitTPDUDictionary.
 	self assert: (extracted at: 'TP-UDH') equals: #[0 3 16rF9 3 1].
-	self assert: (extracted at: 'TP-UD-Len') equals: 134.
+	self assert: (extracted at: 'TP-UD-Len') equals: 140.
 	res := HomeRoutingTPDUHelper encodeSubmit: extracted.
 
 	decodedSMS := HomeRoutingTPDUHelper extract: res.
