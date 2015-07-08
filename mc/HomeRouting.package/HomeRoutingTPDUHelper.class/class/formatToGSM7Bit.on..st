@@ -6,7 +6,7 @@ formatToGSM7Bit: tpdu on: smppMessage
 	udh := #[] toMessage.
 	data := #[] toMessage.
 	
-	input := smppMessage shortMessage readStream.
+	input := smppMessage shortMessage asByteArray readStream.
 	udhi := (smppMessage esmClass bitAnd: 2r01000000) > 0.
 
 	udhi ifTrue: [
