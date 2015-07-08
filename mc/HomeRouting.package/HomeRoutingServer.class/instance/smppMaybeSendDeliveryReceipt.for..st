@@ -26,7 +26,7 @@ smppMaybeSendDeliveryReceipt: aHandler for: aMessage
 		shortMessage: (aMessage body deliveryReceiptString: DateAndTime now) asByteArray;
 		userMessageReference: (aMessage body userMessageReference);
 		messageState: #[2] "DELIVERED";
-		receiptedMessageId: #[0];
+		receiptedMessageId: #[16r30 16r00]; "SMPPValueHolder is limited and this is an octet string '0' "
 		yourself.
 
 	"We don't care about the result. Just send it."
