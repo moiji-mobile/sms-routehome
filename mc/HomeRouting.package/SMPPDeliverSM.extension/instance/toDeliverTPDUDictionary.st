@@ -5,9 +5,12 @@ toDeliverTPDUDictionary
 	result := Dictionary new.
 
 	dcs := data_coding.
-	dcs = 0 ifFalse: [^self notYetImplemented].
-
-	HomeRoutingTPDUHelper formatToGSM7Bit: result on: self.
+	dcs = 0
+		ifTrue: [HomeRoutingTPDUHelper formatToGSM7Bit: result on: self]
+		ifFalse: [
+			dcs = 8
+				ifTrue: [HomeRoutingTPDUHelper formatToUCS2: result on: self]
+				ifFalse: [self notYetImplemented]].
 	scts := DateAndTime now asUTC asGSMSCTS.
 	
 	^result
