@@ -1,5 +1,5 @@
 as yet unclassified
-formatToUCS2: tpdu on: smppMessage 
+formatToOctets: tpdu on: smppMessage 
 	| udhi udh  data input  |
 
 	udh := #[] toMessage.

@@ -19,10 +19,7 @@ toSubmitTPDUDictionary
 	dcs := data_coding.
 	dcs = 0
 		ifTrue: [HomeRoutingTPDUHelper formatToGSM7Bit: result on: self]
-		ifFalse: [
-			dcs = 8
-				ifTrue: [HomeRoutingTPDUHelper formatToUCS2: result on: self]
-				ifFalse: [self notYetImplemented]].
+		ifFalse: [HomeRoutingTPDUHelper formatToOctets: result on: self].
 	scts := DateAndTime now asUTC asGSMSCTS.
 	
 	^result
