@@ -1,13 +1,10 @@
 *HomeRouting-Core
 toDeliverTPDUDictionary
 	"Convert the SMPP body into a dictionary for encoding"
-	| result dcs scts |
+	| result  scts |
 	result := Dictionary new.
 
-	dcs := data_coding.
-	dcs = 0
-		ifTrue: [HomeRoutingTPDUHelper formatToGSM7Bit: result on: self]
-		ifFalse: [HomeRoutingTPDUHelper formatToOctets: result on: self].
+	HomeRoutingDataCodingSchemeHelper convertFromSMPPDeliverSM: self toSMS: result.
 	scts := DateAndTime now asUTC asGSMSCTS.
 	
 	^result
@@ -19,6 +16,5 @@ toDeliverTPDUDictionary
 		at: 'npi' put: source_addr_npi;
 		at: 'TP-OA' put: source_addr;
 		at: 'TP-PID' put: 0;
-		at: 'TP-DCS' put: dcs;
 		at: 'TP-SCTS' put: scts;
 		yourself.
