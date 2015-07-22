@@ -9,9 +9,9 @@ convertSMS: tpdu toDeliverSM: deliverSM
 		^self convertGeneralCoding: tpdu toDeliverSM: deliverSM].
 	(type bitAnd: 2r1111) = 2r1100 ifTrue: [
 		^self convertMessageWaitingIndication: tpdu toDeliverSM: deliverSM ucs2: false].
-	(type bitAnd: 2r1101) = 2r1101 ifTrue: [
+	(type bitAnd: 2r1111) = 2r1101 ifTrue: [
 		^self convertMessageWaitingIndication: tpdu toDeliverSM: deliverSM ucs2: false].
-	(type bitAnd: 2r1110) = 2r1110 ifTrue: [
+	(type bitAnd: 2r1111) = 2r1110 ifTrue: [
 		^self convertMessageWaitingIndication: tpdu toDeliverSM: deliverSM ucs2: true].
 	(type bitAnd: 2r1111) = 2r1111 ifTrue: [
 		^self convertDataCoding: tpdu toDeliverSM: deliverSM].

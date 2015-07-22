@@ -1,9 +1,10 @@
 {
 	"class" : {
-		"convertFromSMPPDeliverSM:toSMS:" : "HolgerHansPeterFreyther 7/22/2015 17:44",
+		"convertDataCoding:toDeliverSM:" : "HolgerHansPeterFreyther 7/22/2015 18:55",
+		"convertFromSMPPDeliverSM:toSMS:" : "HolgerHansPeterFreyther 7/22/2015 19:09",
 		"convertFromSMPPSubmitSM:toSMS:" : "HolgerHansPeterFreyther 7/22/2015 17:39",
 		"convertGeneralCoding:toDeliverSM:" : "HolgerHansPeterFreyther 7/22/2015 17:08",
 		"convertMessageWaitingIndication:toDeliverSM:ucs2:" : "HolgerHansPeterFreyther 7/22/2015 18:15",
-		"convertSMS:toDeliverSM:" : "HolgerHansPeterFreyther 7/22/2015 18:22" },
+		"convertSMS:toDeliverSM:" : "HolgerHansPeterFreyther 7/22/2015 18:46" },
 	"instance" : {
 		 } }

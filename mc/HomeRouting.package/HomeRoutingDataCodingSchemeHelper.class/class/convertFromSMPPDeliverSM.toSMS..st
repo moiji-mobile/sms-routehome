@@ -1,6 +1,6 @@
 as yet unclassified
 convertFromSMPPDeliverSM: deliverSM toSMS: result
-	| dcs |
+	| dcs type |
 
 	dcs := deliverSM dataCoding.
 	dcs = 0 ifTrue: [
@@ -12,6 +12,22 @@ convertFromSMPPDeliverSM: deliverSM toSMS: result
 	dcs = 2r1000 ifTrue: [
 		result at: 'TP-DCS' put: 2r1000.
 		^HomeRoutingTPDUHelper formatToOctets: result on: deliverSM].
+
+	"Message Waiting Indication"
+	type := (dcs bitShift: -4) bitAnd: 2r1111.
+	(#(2r1100 2r1101) includes: type) ifTrue: [
+		| res |
+		res := HomeRoutingTPDUHelper formatToGSM7Bit: result on: deliverSM.
+		result at: 'TP-DCS' put: dcs.
+		^res].
+
+	"Data Coding Message"
+	type = 2r1111 ifTrue: [
+		(dcs bitAnd: 2r100) = 0 ifTrue: [
+			| res |
+			res := HomeRoutingTPDUHelper formatToGSM7Bit: result on: deliverSM.
+			result at: 'TP-DCS' put: dcs.
+			^res]].
 
 	"Assume 1:1 mapping.."
 	result at: 'TP-DCS' put: dcs.
