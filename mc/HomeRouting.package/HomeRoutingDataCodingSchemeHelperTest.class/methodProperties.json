@@ -1,0 +1,13 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"testGeneralDataCoding8BitData" : "HolgerHansPeterFreyther 7/22/2015 17:24",
+		"testGeneralDataCoding8BitDataUDHI" : "HolgerHansPeterFreyther 7/22/2015 17:25",
+		"testGeneralDataCodingMessageClass" : "HolgerHansPeterFreyther 7/22/2015 17:25",
+		"testGeneralDataCodingReserved" : "HolgerHansPeterFreyther 7/22/2015 17:25",
+		"testGeneralDataCodingUCS2" : "HolgerHansPeterFreyther 7/22/2015 17:33",
+		"testGeneralDataCodingUCS2UDH" : "HolgerHansPeterFreyther 7/22/2015 17:34",
+		"testMessageWaiting7bitDiscard" : "HolgerHansPeterFreyther 7/22/2015 18:15",
+		"testMessageWaiting7bitStore" : "HolgerHansPeterFreyther 7/22/2015 18:21",
+		"testMessageWaiting7bitUCS2" : "HolgerHansPeterFreyther 7/22/2015 18:22" } }

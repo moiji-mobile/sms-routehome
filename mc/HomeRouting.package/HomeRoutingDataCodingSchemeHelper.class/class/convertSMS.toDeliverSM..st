@@ -1,27 +1,18 @@
 as yet unclassified
 convertSMS: tpdu toDeliverSM: deliverSM
+	| dcs type |
 
-	"Look at the DCS of the message"
-	(tpdu at: 'TP-DCS') = 0 ifTrue: [
-		HomeRoutingTPDUHelper formatFromGSM7Bit: tpdu on: deliverSM.
-		^true].
-	
-	(((tpdu at: 'TP-DCS') bitAnd: 2r1100) = 2r1000) ifTrue: [
-		| data |
-		"TODO: dead code here?"
-		data := #[] toMessage.
-		(tpdu at: 'TP-UDHI') ifTrue: [
-			| udh |
-			"Indicate we have a UDH here and assume we know the rest of the class"
-			udh := (tpdu at: 'TP-UDH').
-			deliverSM esmClass: 2r01000000.
-			data
-				putByte: udh size;
-				putByteArray: udh].
-		data putByteArray: (tpdu at: 'TP-UD').
-		deliverSM
-			dataCoding: 8;
-			shortMessage: data asByteArray.
-		^true
-	].
+	dcs := tpdu at: 'TP-DCS'.
+	type := dcs bitShift: -4.
+
+	(type bitAnd: 2r1100) = 0 ifTrue: [
+		^self convertGeneralCoding: tpdu toDeliverSM: deliverSM].
+	(type bitAnd: 2r1111) = 2r1100 ifTrue: [
+		^self convertMessageWaitingIndication: tpdu toDeliverSM: deliverSM ucs2: false].
+	(type bitAnd: 2r1101) = 2r1101 ifTrue: [
+		^self convertMessageWaitingIndication: tpdu toDeliverSM: deliverSM ucs2: false].
+	(type bitAnd: 2r1110) = 2r1110 ifTrue: [
+		^self convertMessageWaitingIndication: tpdu toDeliverSM: deliverSM ucs2: true].
+	(type bitAnd: 2r1111) = 2r1111 ifTrue: [
+		^self convertDataCoding: tpdu toDeliverSM: deliverSM].
 	^false
