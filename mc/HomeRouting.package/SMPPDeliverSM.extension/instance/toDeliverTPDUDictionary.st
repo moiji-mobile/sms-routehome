@@ -15,6 +15,6 @@ toDeliverTPDUDictionary
 		at: 'ton' put: source_addr_ton;
 		at: 'npi' put: source_addr_npi;
 		at: 'TP-OA' put: source_addr;
-		at: 'TP-PID' put: 0;
+		at: 'TP-PID' put: protocol_id;
 		at: 'TP-SCTS' put: scts;
 		yourself.

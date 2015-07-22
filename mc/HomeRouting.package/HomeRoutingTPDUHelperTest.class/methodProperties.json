@@ -8,6 +8,8 @@
 		"testExtractOddAlphanumeric" : "HolgerHansPeterFreyther 7/2/2015 17:22",
 		"testExtractSubmit" : "HolgerHansPeterFreyther 11/18/2014 19:25",
 		"testExtractSubmitVP" : "HolgerHansPeterFreyther 12/9/2014 16:30",
+		"testProtocolIdRoundTripSMPP" : "HolgerHansPeterFreyther 7/22/2015 20:17",
+		"testProtocolIdRoundTripSMS" : "HolgerHansPeterFreyther 7/22/2015 20:05",
 		"testRoundTripDeliver:" : "HolgerHansPeterFreyther 11/18/2014 18:42",
 		"testRoundTripSubmit:" : "HolgerHansPeterFreyther 11/18/2014 19:18",
 		"testRoundtripExtractDeliver" : "HolgerHansPeterFreyther 11/18/2014 18:42",

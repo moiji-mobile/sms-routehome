@@ -29,5 +29,5 @@ toSubmitTPDUDictionary
 		at: 'ton' put: dest_addr_ton;
 		at: 'npi' put: dest_addr_npi;
 		at: 'TP-DA' put: destination_addr;
-		at: 'TP-PID' put: 0;
+		at: 'TP-PID' put: protocol_id;
 		yourself.
