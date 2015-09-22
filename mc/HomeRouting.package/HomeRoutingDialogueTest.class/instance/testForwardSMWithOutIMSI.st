@@ -1,19 +1,19 @@
 as yet unclassified
 testForwardSMWithOutIMSI
-	| operationName dialogue  invoke operation param errored ended |
+	| operationName dialogue  invoke  sriArg errored ended |
+
+	sriArg := ASN1Dictionary new
+				at: 'sm-RP-DA' put: (ASN1Dictionary new
+					at: 'serviceCentreAddressDA' put: '4321' toE164;
+					yourself);
+				at: 'sm-RP-OA' put: (ASN1Dictionary new
+					at: 'serviceCentreAddressOA' put: (ByteArray readHexFrom: '912343');
+					yourself);
+				at: 'sm-RP-UI' put: (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e');
+				yourself.
 
 	operationName := 'forwardSM'.
 	dialogue := testEndPoint newDialogue.
-
-	operation := dialogue rosOperationNamed: operationName.
-	param := operation argumentValue.
-	(param expandFieldNamed: 'sm-RP-DA')
-		serviceCentreAddressDA: '4321' toE164.
-	(param expandFieldNamed: 'sm-RP-OA')
-		serviceCentreAddressOA: (ByteArray readHexFrom: '912343').
-	param sm_RP_UI:  (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e').
-
-
 	dialogue
 		onPAbort: [:msg | self assert: false];
 		onUAbort: [:msg | self assert: false];
@@ -21,7 +21,7 @@ testForwardSMWithOutIMSI
 		onEnd: [ended := true].
 
 	invoke := dialogue
-				requestTcInvokeNamed: operationName parameters:  param
+				requestTcInvokeNamed: operationName parameters:  sriArg
 				class: TCAPReportSuccessAndFailure  timeout: 500.
 	invoke
 		onReturn: [self assert: false ];

@@ -1,21 +1,20 @@
 as yet unclassified
 execute
-	| operationName operation param invoke |
+	| sriArg operationName invoke |
+	
+	sriArg := ASN1Dictionary new
+				at: 'msisdn' put: msisdnE164;
+				at: 'sm-RP-PRI' put: true;
+				at: 'serviceCentreAddress' put: hlrAddress toE164;
+				yourself.
 
-	dialogue := dialogueHandler newDialogue.
 	operationName := 'sendRoutingInfoForSMV2'.
-	operation := dialogue rosOperationNamed: operationName.
-	param := operation argumentValue
-			at: 'msisdn' put: msisdnE164;
-			at: 'sm-RP-PRI' put: true;
-			at: 'serviceCentreAddress' put: hlrAddress toE164;
-			yourself.
-
+	dialogue := dialogueHandler newDialogue.
 	dialogue
 		onPAbort: [self signalFailure];
 		onUAbort: [self signalFailure].
 	invoke := dialogue
-				requestTcInvokeNamed: operationName parameters:  param
+				requestTcInvokeNamed: operationName parameters:  sriArg
 				class: 1 timeout: 60.
 	invoke
 		onReturn: [self signalFailure];
