@@ -1,6 +1,6 @@
 as yet unclassified
 testDelayedForwardSM
-	| operationName dialogue  invoke invokeResultMessage sriArg ended continued |
+	| operationName dialogue  invoke invokeResultMessage param ended continued operation |
 
 	ended := false.
 	operationName := 'forwardSM'.
@@ -17,19 +17,17 @@ testDelayedForwardSM
 
 	self deny: ended.
 	self assert: continued.
-		
-	sriArg := ASN1Dictionary new
-				at: 'sm-RP-DA' put: (ASN1Dictionary new
-					at: 'imsi' put: '4321' toTBCD;
-					yourself);
-				at: 'sm-RP-OA' put: (ASN1Dictionary new
-					at: 'serviceCentreAddressOA' put: (ByteArray readHexFrom: '912343');
-					yourself);
-				at: 'sm-RP-UI' put: (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e');
-				yourself.
+
+	operation := dialogue rosOperationNamed: operationName.
+	param := operation argumentValue.
+	(param expandFieldNamed: 'sm-RP-DA')
+		imsi: '4321' toTBCD.
+	(param expandFieldNamed: 'sm-RP-OA')
+		serviceCentreAddressOA: (ByteArray readHexFrom: '912343').
+	param sm_RP_UI:  (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e').
 
 	invoke := dialogue
-				requestTcInvokeNamed: operationName parameters:  sriArg
+				requestTcInvokeNamed: operationName parameters:  param
 				class: TCAPReportSuccessAndFailure  timeout: 500.
 	invoke
 		onReturn: [self assert: false ];
