@@ -50,7 +50,12 @@ baseline5: spec
 				spec
 					className: #ConfigurationOfSMPP;
 					versionString: #'bleedingEdge';
-					repository: 'http://smalltalkhub.com/mc/osmocom/SMPP/main/' ].
+					repository: 'http://smalltalkhub.com/mc/osmocom/SMPP/main/' ];
+			project: 'StatsDClient' with: [
+				spec
+					className: #ConfigurationOfStatsDClient;
+					versionString: '2';
+					repository: 'http://smalltalkhub.com/mc/hfreyther2/StatsD/main/' ].
 		spec package: 'HomeRouting' with: [
-				spec requires: #('OsmoLogging' 'OsmoGSM' 'OsmoNetwork' 'ASN1' 'TCAP' 'HLR' 'SMPP' ). ].
+				spec requires: #('OsmoLogging' 'OsmoGSM' 'OsmoNetwork' 'ASN1' 'TCAP' 'HLR' 'SMPP' 'StatsDClient' ). ].
 		spec group: 'default' with: #('HomeRouting' 'RFB' ). ].
