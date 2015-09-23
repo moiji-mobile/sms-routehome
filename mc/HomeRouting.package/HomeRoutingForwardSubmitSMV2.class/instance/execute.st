@@ -1,17 +1,16 @@
 as yet unclassified
 execute
-	| param |
-	param := ASN1Dictionary new
-		at: 'sm-RP-DA' put: (ASN1Dictionary new
-			at: 'serviceCentreAddressDA' put: remoteGlobalTitle toE164;
-			yourself);
-		at: 'sm-RP-OA' put: (ASN1Dictionary new
-			at: 'msisdn' put: msisdnAsE164;
-			yourself);
-		at: 'sm-RP-UI' put: smRPUI;
-		yourself.
-		
+	| param operation |
+
 	dialogue := dialogueHandler newDialogue.
+	operation := dialogue rosOperationNamed: self operationName.
+	param := operation argumentValue.
+	(param expandFieldNamed: 'sm-RP-DA')
+		at: 'serviceCentreAddressDA' put: remoteGlobalTitle toE164.
+	(param expandFieldNamed: 'sm-RP-OA')
+		at: 'msisdn' put: msisdnAsE164.
+	param at: 'sm-RP-UI' put: smRPUI.
+
 	dialogue
 		onPAbort: [self signalFailure];
 		onUAbort: [self signalFailure].

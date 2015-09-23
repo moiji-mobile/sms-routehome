@@ -1,27 +1,24 @@
 as yet unclassified
 testMOForwardSMRejected
-	| operationName dialogue  invoke sriArg wasAborted |
-	
+	| operationName dialogue operation param invoke wasAborted |
 
-	sriArg := ASN1Dictionary new
-				at: 'sm-RP-DA' put: (ASN1Dictionary new
-					at: 'imsi' put: '4321' toTBCD;
-					yourself);
-				at: 'sm-RP-OA' put: (ASN1Dictionary new
-					at: 'serviceCentreAddressOA' put: (ByteArray readHexFrom: '912343');
-					yourself);
-				at: 'sm-RP-UI' put: (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e');
-				yourself.
-
-	operationName := 'mo-ForwardSM'.
-	wasAborted := true.
 	dialogue := testEndPoint newDialogue.
+	operationName := 'mo-ForwardSM'.	
+	operation := dialogue rosOperationNamed: operationName.
+	param := operation argumentValue.
+	(param expandFieldNamed: 'sm-RP-DA')
+		at: 'imsi' put: '4321' toTBCD.
+	(param expandFieldNamed: 'sm-RP-OA')
+		at: 'serviceCentreAddressOA' put: (ByteArray readHexFrom: '912343').
+	param at: 'sm-RP-UI' put: (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e').
+
+	wasAborted := true.
 	dialogue
 		onPAbort: [:msg | self assert: false];
 		onUAbort: [:msg | wasAborted := true].
 
 	invoke := dialogue
-				requestTcInvokeNamed: operationName parameters:  sriArg
+				requestTcInvokeNamed: operationName parameters:  param
 				class: TCAPReportSuccessAndFailure  timeout: 500.
 	invoke
 		onReturn: [self assert: false ];

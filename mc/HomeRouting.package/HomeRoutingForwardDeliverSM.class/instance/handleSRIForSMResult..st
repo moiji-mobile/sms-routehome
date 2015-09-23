@@ -1,25 +1,24 @@
 as yet unclassified
 handleSRIForSMResult: aResult
-	| imsi mscNumber param invoke |
+	| imsi mscNumber operationName operation param invoke |
 	imsi := aResult resultObject imsi.
 	mscNumber := aResult resultObject locationInfoWithLMSI networkNode_Number fromE164.
 
-
-	param := ASN1Dictionary new
-		at: 'sm-RP-DA' put: (ASN1Dictionary new
-			at: 'imsi' put: imsi;
-			yourself);
-		at: 'sm-RP-OA' put: (ASN1Dictionary new
-			at: 'serviceCentreAddressOA' put: hlr mscNumber toE164;
-			yourself);
-		at: 'sm-RP-UI' put: smRPUI;
-		yourself.
-		
 	dialogue := dialogueHandler newDialogue.
+	operationName := 'forwardSM'.
+	operation := dialogue rosOperationNamed: operationName.
+
+	param := operation argumentValue.
+	(param expandFieldNamed: 'sm-RP-DA')
+			at: 'imsi' put: imsi.
+	(param expandFieldNamed: 'sm-RP-OA') 
+			at: 'serviceCentreAddressOA' put: hlr mscNumber toE164.
+	param at: 'sm-RP-UI' put: smRPUI.
+
 	dialogue
 		onPAbort: [self signalFailure];
 		onUAbort: [self signalFailure].
-	invoke := dialogue requestTcInvokeNamed: 'forwardSM' parameters:  param class: 1 timeout: 60.
+	invoke := dialogue requestTcInvokeNamed: operationName parameters:  param class: 1 timeout: 60.
 	invoke
 		onReturn: [self signalFailure];
 		onError: [self signalFailure];

@@ -1,3 +1,3 @@
 as yet unclassified
 applicationContexOID
-	^dialogue applicationContextOidForOperationNamed: self operationName
+	^dialogue applicationContextNamed: self operationName
