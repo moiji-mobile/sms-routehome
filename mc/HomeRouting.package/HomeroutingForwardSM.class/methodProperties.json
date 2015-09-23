@@ -1,13 +1,13 @@
 {
 	"class" : {
-		"absentSubscriber" : "HolgerHansPeterFreyther 7/2/2015 16:24",
-		"absentSubscriberData" : "HolgerHansPeterFreyther 7/2/2015 16:24" },
+		"absentSubscriber" : "HolgerHansPeterFreyther 7/2/2015 16:24" },
 	"instance" : {
 		"continueOrEnd" : "HolgerHansPeterFreyther 11/25/2014 11:56",
 		"createDeliverSMFor:" : "HolgerHansPeterFreyther 11/13/2014 09:40",
 		"formatForDeliverSM:on:" : "HolgerHansPeterFreyther 7/22/2015 11:45",
-		"forwardSM" : "HolgerHansPeterFreyther 7/2/2015 16:29",
+		"forwardSM" : "NorbertHartl 9/23/2015 11:23",
 		"reportUnhandled:" : "HolgerHansPeterFreyther 9/22/2014 18:54",
-		"smppError" : "HolgerHansPeterFreyther 9/22/2014 20:43",
+		"returnError" : "NorbertHartl 9/23/2015 11:22",
+		"smppError" : "NorbertHartl 9/23/2015 11:06",
 		"smppResult" : "HolgerHansPeterFreyther 9/22/2014 20:39",
-		"smppTimeout" : "HolgerHansPeterFreyther 7/2/2015 16:29" } }
+		"smppTimeout" : "NorbertHartl 9/23/2015 11:23" } }

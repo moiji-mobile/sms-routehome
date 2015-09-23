@@ -9,7 +9,7 @@ forwardSM
 	selectedSMPPConnection ifNil: [
 		self logError: ('ID(<1p>) No SMPPConnection. returning with sm-DeliveryFailure'
 						expandMacrosWith: dialogue id) area: #home.
-		invocation returnError: self class absentSubscriber with: self class absentSubscriberData.
+		self returnError.
 		^dialogue requestTcEnd: false.
 	].
 
@@ -18,7 +18,7 @@ forwardSM
 		"Need to have an IMSI..."
 		self logError: ('ID(<1p>) No IMSI inside sm_RP_DA'
 						expandMacrosWith: dialogue id) area: #home.
-		invocation returnError: 'unexpectedDataValue' with: nil.
+		invocation returnErrorNamed: 'unexpectedDataValue'.
 		^dialogue requestTcEnd: false.
 	].
 	imsi := imsi fromTBCD.
@@ -29,7 +29,7 @@ forwardSM
 		"Need to have a valid IMSI..."
 		self logError: ('ID(<1p>) IMSI(<2s>) was not found as value in map'
 						expandMacrosWith: dialogue id with: imsi) area: #home.
-		invocation returnError: 'unexpectedDataValue' with: nil.
+		invocation returnErrorNamed: 'unexpectedDataValue'.
 		^dialogue requestTcEnd: false.
 	].
 
@@ -37,7 +37,7 @@ forwardSM
 	deliverSM ifNil: [
 		self logError: ('ID(<1p>) IMSI(<2s>) failed to create deliverSM SMPP PDU'
 						expandMacrosWith: dialogue id with: imsi) area: #home.
-		invocation returnError: 'sm-DeliveryFailure' with: nil.
+		invocation returnErrorNamed: 'sm-DeliveryFailure'.
 		^dialogue requestTcEnd: false.
 	].
 
