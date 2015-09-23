@@ -1,22 +1,22 @@
 as yet unclassified
 testIncomingDeliverSM
-	| deliverSM response mapReqSRI mapReqFwd |
+	| deliverSM response mapReqSRI mapReqFwd inDiag |
 
 	"Check if we receive a forwardSM.."
 	testEndPoint
 		onDialogue: [:diag |
+			inDiag := diag.
 			diag onInvoke: [:tcapNotify |
-				| isSRIForSM isFwdSM |
+				| isSRIForSM isFwdSM result |
 				isSRIForSM := tcapNotify invocation operationName = 'sendRoutingInfoForSMV2'.
 				isFwdSM := tcapNotify invocation operationName = 'forwardSM'.
 				isSRIForSM ifTrue: [
 					mapReqSRI := tcapNotify invocation.
-					tcapNotify returnResultLast: (ASN1Dictionary new
-							at: 'imsi' put: '1234' toTBCD;
-							at: 'locationInfoWithLMSI' put: (ASN1Dictionary new
-								at: 'networkNode-Number' put: '4321' toE164;
-								yourself);
-							yourself).
+					result := mapReqSRI resultValue.
+					result at: 'imsi' put: '1234' toTBCD.
+					(result expandFieldNamed: 'locationInfoWithLMSI')
+						at: 'networkNode-Number' put: '4321' toE164.
+					tcapNotify returnResultLast: result.
 					diag requestTcEnd: false].
 				isFwdSM ifTrue: [
 					mapReqFwd := tcapNotify invocation.
@@ -32,6 +32,7 @@ testIncomingDeliverSM
 	self assert: mapReqSRI argument sm_RP_PRI.
 	self deny: mapReqFwd isNil.
 	self assert: mapReqFwd operationName equals: 'forwardSM'.
+	self assert: inDiag applicationContextName equals: '0.4.0.0.1.0.25.2' asAsn1Oid.
 
 	"We expect that we received an error for the submitSM"
 	self assert: smppConnection sent size equals: 1.
