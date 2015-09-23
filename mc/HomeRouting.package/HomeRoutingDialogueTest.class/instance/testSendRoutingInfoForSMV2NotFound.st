@@ -1,15 +1,17 @@
 as yet unclassified
 testSendRoutingInfoForSMV2NotFound
-	| operationName dialogue  invoke lastError sriArg |
+	| operation operationName dialogue  invoke lastError sriArg |
+
+	dialogue := testEndPoint newDialogue.
+	operationName := 'sendRoutingInfoForSMV2'.
+	operation := dialogue rosOperationNamed: operationName.
 	
-	sriArg := ASN1Dictionary new
+	sriArg := operation argumentValue
 				at: 'msisdn' put: '912345' toE164;
 				at: 'sm-RP-PRI' put: false;
 				at: 'serviceCentreAddress' put: '912343';
 				yourself.
 
-	operationName := 'sendRoutingInfoForSMV2'.
-	dialogue := testEndPoint newDialogue.
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
 				class: TCAPReportSuccessAndFailure  timeout: 500.

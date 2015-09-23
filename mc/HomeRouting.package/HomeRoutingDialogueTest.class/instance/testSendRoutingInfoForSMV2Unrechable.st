@@ -1,17 +1,19 @@
 as yet unclassified
 testSendRoutingInfoForSMV2Unrechable
-	| operationName dialogue  invoke lastResult sriArg |
+	| operation operationName dialogue  invoke lastResult sriArg |
 
 	smppConnection setUnreachable.
+
+	dialogue := testEndPoint newDialogue.
+	operationName := 'sendRoutingInfoForSMV2'.
+	operation := dialogue rosOperationNamed: operationName.
 	
-	sriArg := ASN1Dictionary new
+	sriArg := operation argumentValue
 				at: 'msisdn' put: '1234' toE164;
 				at: 'sm-RP-PRI' put: false;
 				at: 'serviceCentreAddress' put: '912343';
 				yourself.
 
-	operationName := 'sendRoutingInfoForSMV2'.
-	dialogue := testEndPoint newDialogue.
 	invoke := dialogue
 				requestTcInvokeNamed: operationName parameters:  sriArg
 				class: TCAPReportSuccessAndFailure  timeout: 500.

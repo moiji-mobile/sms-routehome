@@ -1,15 +1,17 @@
 as yet unclassified
 testSendRoutingInfoForSMV3
-	| operationName dialogue  invoke invokeResultMessage sriArg |
+	| operation operationName dialogue  invoke invokeResultMessage sriArg |
 
-	sriArg := ASN1Dictionary new
+	dialogue := testEndPoint newDialogue.
+	operationName := 'sendRoutingInfoForSMV3'.
+	operation := dialogue rosOperationNamed: operationName.
+	
+	sriArg := operation argumentValue
 				at: 'msisdn' put: '1234' toE164;
 				at: 'sm-RP-PRI' put: false;
 				at: 'serviceCentreAddress' put: '912343';
 				yourself.
 
-	operationName := 'sendRoutingInfoForSMV3'.
-	dialogue := testEndPoint newDialogue.
 	dialogue
 		onPAbort: [:msg | self assert: false];
 		onUAbort: [:msg | self assert: false].
