@@ -12,7 +12,7 @@ testForwardSMMoreMessagesToSend
 	(param expandFieldNamed: 'sm-RP-OA')
 		serviceCentreAddressOA: (ByteArray readHexFrom: '912343').
 	param sm_RP_UI:  (ByteArray readHexFrom: '040c9153345800485500004170716104000004d4f29c0e').
-	param moreMessagesToSend: nil asAsn1Value.
+	param moreMessagesToSend: nil.
 
 	dialogue
 		onPAbort: [:msg | self assert: false];
