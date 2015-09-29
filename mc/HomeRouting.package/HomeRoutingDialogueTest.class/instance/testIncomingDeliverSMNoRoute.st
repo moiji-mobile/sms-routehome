@@ -14,12 +14,11 @@ testIncomingDeliverSMNoRoute
 				isFwdSM := tcapNotify invocation operationName = 'forwardSM'.
 				isSRIForSM ifTrue: [
 					mapReqSRI := tcapNotify invocation.
-					tcapNotify returnResultLast: (ASN1Dictionary new
+					tcapNotify returnResultLastUsing: [ :item |
+						item
 							at: 'imsi' put: '1234' toTBCD;
-							at: 'locationInfoWithLMSI' put: (ASN1Dictionary new
-								at: 'networkNode-Number' put: '4321' toE164;
-								yourself);
-							yourself).
+							expandAt: 'locationInfoWithLMSI' using: [ :infoLmsi |
+								infoLmsi at: 'networkNode-Number' put: '4321' toE164 ] ].
 					diag requestTcEnd: false].
 				isFwdSM ifTrue: [
 					mapReqFwd := tcapNotify invocation.
