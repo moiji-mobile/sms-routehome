@@ -6,7 +6,7 @@ testForwardSMWithOutIMSI
 	dialogue := testEndPoint newDialogue.
 
 	operation := dialogue rosOperationNamed: operationName.
-	param := operation argumentValue.
+	param := operation newArgumentValue.
 	(param expandFieldNamed: 'sm-RP-DA')
 		serviceCentreAddressDA: '4321' toE164.
 	(param expandFieldNamed: 'sm-RP-OA')

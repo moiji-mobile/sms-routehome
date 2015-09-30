@@ -5,7 +5,7 @@ execute
 	dialogue := dialogueHandler newDialogue.
 	operationName := 'sendRoutingInfoForSMV2'.
 	operation := dialogue rosOperationNamed: operationName.
-	param := operation argumentValue
+	param := operation newArgumentValue
 			at: 'msisdn' put: msisdnE164;
 			at: 'sm-RP-PRI' put: true;
 			at: 'serviceCentreAddress' put: hlrAddress toE164;

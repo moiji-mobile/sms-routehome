@@ -12,7 +12,7 @@ testIncomingDeliverSM
 				isFwdSM := tcapNotify invocation operationName = 'forwardSM'.
 				isSRIForSM ifTrue: [
 					mapReqSRI := tcapNotify invocation.
-					result := mapReqSRI resultValue.
+					result := mapReqSRI newResultValue.
 					result at: 'imsi' put: '1234' toTBCD.
 					(result expandFieldNamed: 'locationInfoWithLMSI')
 						at: 'networkNode-Number' put: '4321' toE164.

@@ -8,7 +8,7 @@ testSendRoutingInfoForSMV3Unreachable
 	operationName := 'sendRoutingInfoForSMV3'.
 	operation := dialogue rosOperationNamed: operationName.
 	
-	sriArg := operation argumentValue
+	sriArg := operation newArgumentValue
 				at: 'msisdn' put: '1234' toE164;
 				at: 'sm-RP-PRI' put: false;
 				at: 'serviceCentreAddress' put: '912343';

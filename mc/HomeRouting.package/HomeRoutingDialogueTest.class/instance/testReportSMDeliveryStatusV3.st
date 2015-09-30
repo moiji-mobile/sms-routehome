@@ -8,7 +8,7 @@ testReportSMDeliveryStatusV3
 	operationName := 'reportSM-DeliveryStatusV3'.
 	operation := dialogue rosOperationNamed: operationName.
 
-	param := operation argumentValue
+	param := operation newArgumentValue
 				at: 'msisdn' put: '1234' toE164;
 				at: 'serviceCentreAddress' put: '912343';
 				at: 'sm-DeliveryOutcome' put: 'memoryCapacityExceeded';

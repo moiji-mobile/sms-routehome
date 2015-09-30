@@ -8,7 +8,7 @@ handleSRIForSMResult: aResult
 	operationName := 'forwardSM'.
 	operation := dialogue rosOperationNamed: operationName.
 
-	param := operation argumentValue.
+	param := operation newArgumentValue.
 	(param expandFieldNamed: 'sm-RP-DA')
 			at: 'imsi' put: imsi.
 	(param expandFieldNamed: 'sm-RP-OA') 

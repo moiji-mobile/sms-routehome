@@ -5,7 +5,7 @@ testMOForwardSMRejected
 	dialogue := testEndPoint newDialogue.
 	operationName := 'mo-ForwardSM'.	
 	operation := dialogue rosOperationNamed: operationName.
-	param := operation argumentValue.
+	param := operation newArgumentValue.
 	(param expandFieldNamed: 'sm-RP-DA')
 		at: 'imsi' put: '4321' toTBCD.
 	(param expandFieldNamed: 'sm-RP-OA')

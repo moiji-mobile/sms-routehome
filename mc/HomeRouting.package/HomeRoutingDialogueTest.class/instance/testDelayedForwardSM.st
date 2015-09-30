@@ -19,7 +19,7 @@ testDelayedForwardSM
 	self assert: continued.
 
 	operation := dialogue rosOperationNamed: operationName.
-	param := operation argumentValue.
+	param := operation newArgumentValue.
 	(param expandFieldNamed: 'sm-RP-DA')
 		imsi: '4321' toTBCD.
 	(param expandFieldNamed: 'sm-RP-OA')

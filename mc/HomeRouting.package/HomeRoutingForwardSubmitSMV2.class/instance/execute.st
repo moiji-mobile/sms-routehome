@@ -4,7 +4,7 @@ execute
 
 	dialogue := dialogueHandler newDialogue.
 	operation := dialogue rosOperationNamed: self operationName.
-	param := operation argumentValue.
+	param := operation newArgumentValue.
 	(param expandFieldNamed: 'sm-RP-DA')
 		at: 'serviceCentreAddressDA' put: remoteGlobalTitle toE164.
 	(param expandFieldNamed: 'sm-RP-OA')
