@@ -10,7 +10,7 @@ testReportSMDeliveryStatusV2
 	
 	param := operation newArgumentValue
 				at: 'msisdn' put: '1234' toE164;
-				at: 'serviceCentreAddress' put: '912343';
+				at: 'serviceCentreAddress' put: '912343' toE164;
 				at: 'sm-DeliveryOutcome' put: 'memoryCapacityExceeded';
 				yourself.
 

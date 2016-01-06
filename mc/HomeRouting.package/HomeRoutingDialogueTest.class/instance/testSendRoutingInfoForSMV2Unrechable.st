@@ -11,7 +11,7 @@ testSendRoutingInfoForSMV2Unrechable
 	sriArg := operation newArgumentValue
 				at: 'msisdn' put: '1234' toE164;
 				at: 'sm-RP-PRI' put: false;
-				at: 'serviceCentreAddress' put: '912343';
+				at: 'serviceCentreAddress' put: '912343' toE164;
 				yourself.
 
 	invoke := dialogue

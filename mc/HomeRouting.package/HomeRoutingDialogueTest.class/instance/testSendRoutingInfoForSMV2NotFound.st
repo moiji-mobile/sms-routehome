@@ -9,7 +9,7 @@ testSendRoutingInfoForSMV2NotFound
 	sriArg := operation newArgumentValue
 				at: 'msisdn' put: '912345' toE164;
 				at: 'sm-RP-PRI' put: false;
-				at: 'serviceCentreAddress' put: '912343';
+				at: 'serviceCentreAddress' put: '912343' toE164;
 				yourself.
 
 	invoke := dialogue
