@@ -1,0 +1,14 @@
+{
+	"category" : "HomeRouting-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HolgerHansPeterFreyther 7/22/2015 10:29",
+	"instvars" : [
+		 ],
+	"name" : "ShortMessageDataCodingSchemeHelper",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

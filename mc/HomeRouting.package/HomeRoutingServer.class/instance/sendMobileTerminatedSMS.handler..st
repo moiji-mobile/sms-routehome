@@ -10,7 +10,7 @@ sendMobileTerminatedSMS: aMessage handler: aHandler
 		self
 			logNotice: ('Server(<1p>) No MO-SMS rule found' expandMacrosWith: mscNumber) area: #home.
 		^self smppReturnFailureOn: aHandler for: aMessage].
-	encoded := HomeRoutingTPDUHelper encodeDeliver: tpdu.
+	encoded := ShortMessageTPDUHelper encodeDeliver: tpdu.
 	HomeRoutingForwardDeliverSM new
 		dialogueHandler: endPoint;
 		hlr: self;

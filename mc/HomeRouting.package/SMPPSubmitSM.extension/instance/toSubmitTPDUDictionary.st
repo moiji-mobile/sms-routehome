@@ -16,7 +16,7 @@ toSubmitTPDUDictionary
 		mr := user_message_reference asInteger bitAnd: 16rFF.
 	].
 
-	HomeRoutingDataCodingSchemeHelper convertFromSMPPSubmitSM: self toSMS: result.
+	ShortMessageDataCodingSchemeHelper convertFromSMPPSubmitSM: self toSMS: result.
 	scts := DateAndTime now asUTC asGSMSCTS.
 	
 	^result

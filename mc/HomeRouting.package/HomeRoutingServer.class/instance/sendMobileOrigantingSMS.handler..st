@@ -16,7 +16,7 @@ sendMobileOrigantingSMS: aMessage handler: aHandler
 			at: 'TP-VPFI' put: 2r10;
 			at: 'TP-VP' put: (vp days + 166) asByteArray].
 	
-	encoded := HomeRoutingTPDUHelper encodeSubmit: tpdu.
+	encoded := ShortMessageTPDUHelper encodeSubmit: tpdu.
 	rule forwardSMOperation new
 		dialogueHandler: endPoint;
 		hlr: self;

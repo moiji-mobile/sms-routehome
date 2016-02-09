@@ -1,0 +1,15 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"testGeneralDataCoding8BitData" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testGeneralDataCoding8BitDataUDHI" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testGeneralDataCodingMessageClass" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testGeneralDataCodingReserved" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testGeneralDataCodingUCS2" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testGeneralDataCodingUCS2UDH" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testMessageDataCoding7Bit" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testMessageDataCodingUCS2" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testMessageWaiting7bitDiscard" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testMessageWaiting7bitStore" : "HolgerHansPeterFreyther 2/9/2016 17:49",
+		"testMessageWaiting7bitUCS2" : "HolgerHansPeterFreyther 2/9/2016 17:49" } }

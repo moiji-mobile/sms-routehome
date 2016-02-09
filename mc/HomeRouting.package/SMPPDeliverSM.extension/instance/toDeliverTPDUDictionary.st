@@ -4,7 +4,7 @@ toDeliverTPDUDictionary
 	| result  scts |
 	result := Dictionary new.
 
-	HomeRoutingDataCodingSchemeHelper convertFromSMPPDeliverSM: self toSMS: result.
+	ShortMessageDataCodingSchemeHelper convertFromSMPPDeliverSM: self toSMS: result.
 	scts := DateAndTime now asUTC asGSMSCTS.
 	
 	^result

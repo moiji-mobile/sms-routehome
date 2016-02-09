@@ -11,7 +11,7 @@ formatForDeliverSM: tpdu on: deliverSM
 		esmClass: 0;
 		protocolId: (tpdu at: 'TP-PID').		
 
-	^(HomeRoutingDataCodingSchemeHelper convertSMS: tpdu toDeliverSM: deliverSM)
+	^(ShortMessageDataCodingSchemeHelper convertSMS: tpdu toDeliverSM: deliverSM)
 		ifTrue: [deliverSM]
 		ifFalse: [
 			self reportUnhandled: tpdu.

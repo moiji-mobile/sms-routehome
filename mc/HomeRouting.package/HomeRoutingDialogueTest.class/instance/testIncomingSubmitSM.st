@@ -18,7 +18,7 @@ testIncomingSubmitSM
 	self assert: mapReq operationName equals: 'forwardSM'.
 	self assert: mapReq argument sm_RP_DA serviceCentreAddressDA fromE164 equals: '91143'.
 
-	extracted := HomeRoutingTPDUHelper extractSubmitFrom: mapReq argument sm_RP_UI readStream.
+	extracted := ShortMessageTPDUHelper extractSubmitFrom: mapReq argument sm_RP_UI readStream.
 	self assert: (extracted at: 'TP-VPFI') equals: 2r10.
 	self assert: (extracted at: 'TP-VP') equals: #[173].
 
