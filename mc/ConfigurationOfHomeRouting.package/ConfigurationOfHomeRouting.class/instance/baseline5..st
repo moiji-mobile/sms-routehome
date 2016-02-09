@@ -55,7 +55,12 @@ baseline5: spec
 				spec
 					className: #ConfigurationOfStatsDClient;
 					versionString: '2';
-					repository: 'http://smalltalkhub.com/mc/hfreyther2/StatsD/main/' ].
+					repository: 'http://smalltalkhub.com/mc/hfreyther2/StatsD/main/' ];
+			project: 'ShortMessage' with: [
+				spec
+					className: #ConfigurationOfShortMessage;
+					versionString: '1';
+					repository: 'http://smalltalkhub.com/mc/osmocom/ShortMessage/main/' ].
 		spec package: 'HomeRouting' with: [
-				spec requires: #('OsmoLogging' 'OsmoGSM' 'OsmoNetwork' 'ASN1' 'TCAP' 'HLR' 'SMPP' 'StatsDClient' ). ].
+				spec requires: #('OsmoLogging' 'OsmoGSM' 'OsmoNetwork' 'ASN1' 'TCAP' 'HLR' 'SMPP' 'StatsDClient' 'ShortMessage' ). ].
 		spec group: 'default' with: #('HomeRouting' 'RFB' ). ].
