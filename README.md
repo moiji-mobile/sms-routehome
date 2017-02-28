@@ -1,4 +1,4 @@
-SMS Homerouting [![Test Status](https://api.bob-bench.org/v1/badgeByUrl?branch=master&hosting=github&ci=travis-ci&repo=moiji-mobile%2Fsms-routehome)](https://bob-bench.org/r/gh/moiji-mobile/sms-routehome)
+SMS Homerouting [![Build Status](https://travis-ci.org/moiji-mobile/sms-routehome.svg?branch=master)](https://travis-ci.org/moiji-mobile/sms-routehome) [![Test Status](https://api.bob-bench.org/v1/badgeByUrl?branch=master&hosting=github&ci=travis-ci&repo=moiji-mobile%2Fsms-routehome)](https://bob-bench.org/r/gh/moiji-mobile/sms-routehome)
 =====
 
 This application will handle the GSM MAP sendRoutingInfoForSM operation
