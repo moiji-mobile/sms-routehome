@@ -1,0 +1,9 @@
+SmalltalkCISpec {
+  #loading : [
+      SCIMetacelloLoadSpec {
+          #baseline : 'HomeRouting',
+          #directory : 'mc',
+          #platforms : [ #pharo ]
+      }
+  ]
+}
