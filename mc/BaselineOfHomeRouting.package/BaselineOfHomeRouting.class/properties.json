@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfHomeRouting",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfHomeRouting",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
