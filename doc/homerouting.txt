@@ -1,0 +1,253 @@
+StrongLeaf HomeRouting Design Document
+=====================================
+Holger Freyther <holger@freyther.de>
+
+
+Introduction
+------------
+
+The HomeRouting system is responsible for making sure that
+all MT-SMS will be routed to this system. SMS can then be
+converted to SMPP and be forwarded to other systems.
+
+
+Features, Limitations and Assumptions
+-------------------------------------
+
+* Compression of SMS is not supported.
+* All un-mappable DCS are not supported.
+* No TCAP segmentation for SMPP to MAP conversion
+
+
+Requirements for deployment
+---------------------------
+
+A Debian 64-bit system should be used.
+
+
+
+Implementation
+--------------
+
+Overview
+~~~~~~~~
+
+The HomeRouting system is handling three parts. The main
+function is to handle SRIForSM/mt-ForwardSM/forwardSM and
+forward the SMS to a SMPP link. Secondary functions are to
+forward SMPP SubmitSM to a pre-configured SMSC and to deliver
+a SMPP DeliverSM to a remote system.
+
+
+MAP MT-SMS to SMS
+^^^^^^^^^^^^^^^^^
+
+The HomeRouting system will receive the MAP SRIForSM
+to query the current VLR and IMSI of a subscriber. It
+will respond with a fixed per HomeRouting system GT. To
+generate the IMSI a rule to modify the MSISDN into a
+arbitary IMSI will be used. This way the HomeRouting
+system does not need to look-up any data from a database.
+The rule must be reversible to allow to remove the new
+IMSI prefix with a MSISDN prefix.
+
+The remote system will now attempt to send a forwardSM
+or mt-ForwardSM operation to the system. The received
+message will be converted to a SMPP DeliverSM and then
+be forwarded on the configured SMPP connection. The
+SMPP result will be mapped to a MAP result.
+
+
+SMPP SubmitSM to MAP MO-SMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The HomeRouting system can have zero or more rules for
+MO-SMS. These rules have a regular expressions for the
+source and destination number and can determine to which
+SMSC the SMS should be sent to, which MAP operation to
+use (forwardSM or mo-ForwardSM) and the validity period
+to use.
+
+The rules are looked up in the order they have been
+added and the first matching rule will be used.
+
+
+SMPP DeliverSM to MAP MT-SMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The HomeRoutin system can have zero or more rules for
+MT-SMS. Each rule can match the source and destination
+number and influence which GT translation type to use
+for the SRIForSM and the mt-ForwardSM.
+
+
+Message and Error handling
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is the standard behavior of the HomeRouting system.
+
+
+MAP MT-SMS to SMPP
+^^^^^^^^^^^^^^^^^^
+
+
+|======================================================
+|Nr.   | Condition		| MAP result
+|M-MT01 | No SMPP connection | absentSubscriber (depending on V2/V3)
+|M-MT02 | Missing IMSI in sm-RP-DA | unexpectedDataValue
+|M-MT03 | Missing IMSI->MSISDN mapping | unexpectedDataValue
+|M-MT04 | SMS can’t be converted to SMPP DeliverSM | sm-DeliveryFailure
+|M-MT05 | No SMPP response |absentSubscriber (depending on V2/V3)
+|M-MT06 | SMPP Error | sm-DeliveryFailure
+|M-MT07 | SMPP Success | returnResultLast
+|======================================================
+
+
+
+SMPP DeliverSM to MAP MT-SMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|======================================================
+|Nr. | Condition		| SMPP result
+|S-MT01| No route | SMPP Command Status 8
+|S-MT02| MAP Failure | SMPP Command Status 8
+|S-MT03| MAP Success | SMPP Command Status 0
+|======================================================
+
+
+
+SMPP SubmitSM to MAP MO-SMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|======================================================
+|Nr. | Condition		| SMPP result
+
+|S-MO01| No route | SMPP Command Status 8
+|S-MO02| MAP Success | SMPP Command Status 0 + Delivery Report
+|S-MO03| MAP Failure | SMPP Command Status 8
+|======================================================
+
+
+
+Quirk Handling
+~~~~~~~~~~~~~~
+
+Some SMSCs invoke ROS operations without the TCAP session having a
+dialogueRequest/applicationContextName. The HomeRouting system has
+a list of local opcode to ApplicationContextName. The current mappings are:
+
+opcode *45*:: Is considered a sendRoutingInfoForSM using the
+application context shortMsgGatewayContext-v2.
+
+Configuration using Smalltalk
+-----------------------------
+
+The HomeRouting can currently only be configured through
+Smalltalk code. One needs to configure Network Service,
+the MSISDN/IMSI mapping for all supported prefixes, GTs
+to be used and the SMPP connection.
+
+----
+| smppmanager homeRoutingServer conn tcap |
+
+syslog := LogTargetSyslog openlog: 'hr' option: 0
+	facility: LogTargetSyslog LOG_USER.
+syslog prefix: ''.
+LogManager default target: syslog.
+
+"Listen for incoming connections"
+smppManager := SMPPConnectionManager new.
+smppManager
+	password: 'secret';
+	systemType: 'cmt';
+	systemId: 'id'.
+Smalltalk at: #ZSMPP put: smppManager.
+
+
+"Create a server"
+homeRoutingServer := HomeRoutingServer new.
+homeRoutingServer
+	hlrNumber: '4948900077';
+	mscNumber: '4948900077';
+	smppConnectionManager: smppManager.
+
+"Which SMSC should receive our MO-SMS"
+homeRoutingServer addMOSMSRule:
+	(HomeRoutingMOSMSMSISDNConfig new
+		sourceMsisdnMatch: '[0-9]*' asRegex;
+		destinationMsisdnMatch: '[0-9]*' asRegex;
+		smscNumber: '3548900070';
+		useForwardSM;
+		validityPeriod: 7 days;
+		yourself).
+
+"Which GT translation type to use for MT-SMS to route
+it through a SMS hub"
+homeRoutingServer addMTSMSRule:
+	(HomeRoutingMTSMSMSISDNConfig new
+		sourceMsisdnMatch: '[0-9]*' asRegex;
+		destinationMsisdnMatch: '[0-9]*' asRegex;
+		sendRoutingInfoTranslationType: 0;
+		forwardSMTranslationType: 0;
+		yourself).
+
+
+Smalltalk at: #ZHomeRouting put: homeRoutingServer.
+
+"SCCP interaction"
+conn := SCCPNetworkServiceOsmo new
+    hostname: 'localhost' port: 5002;
+    token: 'st-smpp';
+    yourself.
+Smalltalk at: #ZCONN put: conn.
+
+"Set-up TCAP and bind to this stack"
+tcap := TCAPServiceEndPoint newHomeRouting.
+tcap asn1Model: HomeRoutingServer asn1Model.
+tcap factory homeRoutingServer: homeRoutingServer.
+tcap networkService: conn.
+homeRoutingServer endPoint: tcap.
+
+"Map IMSI to MSISDN"
+homeRoutingServer database
+   addPair: (HomeRoutingPrefixPair new
+              imsiPrefix: '262';
+              msisdnPrefix: '49123';
+              yourself);
+   addPair: (HomeRoutingPrefixPair new
+              imsiPrefix: '261';
+              msisdnPrefix: '47321';
+yourself).
+
+"Now start the linkset and SMPP" 
+conn start.
+smppManager start: 2775. 
+----
+
+
+HomeRoutingMOSMSMSISDNConfig
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If useMOForwardSM is used instead of useForwardSM the mo-ForwardSM
+operation will be used to communicate with the home SMSC.
+
+HomeRoutingServer
+~~~~~~~~~~~~~~~~~
+
+In case a SMPP Connection should be used for SMPP to MAP but not
+the other way around it can be registered using the >>#registerESME:
+call of the HomeRouting system.
+
+Operation
+---------
+
+Interface
+---------
+
+Monitoring
+~~~~~~~~~~
+
+When more messages arrive than are allowed to be queued a syslog
+entry will be generated. This can be parsable with other tools.
+
+

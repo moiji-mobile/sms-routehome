@@ -7,6 +7,11 @@ os:
 install:
 - pip install --user benchupload
 
+addons:
+  apt:
+    packages:
+    - asciidoc
+    - libxml2-utils
 
 smalltalk:
 - Pharo-3.0
