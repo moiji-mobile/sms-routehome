@@ -14,9 +14,8 @@ addons:
     - libxml2-utils
 
 smalltalk:
-- Pharo-3.0
-- Pharo-4.0
 - Pharo-5.0
+- Pharo-6.0
 
 script:
 - $SMALLTALK_CI_HOME/run.sh
